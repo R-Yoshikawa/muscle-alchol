@@ -1,7 +1,58 @@
 <template>
 <div>
-<button>スレッド</button>
-<button>レビュー</button>
+<div style="border: 1px solid #F0F0F0; width: 90%; height: 160px; overflow: auto;">
+<!-- 折りたたみ展開ボタン -->
+<div onclick="obj=document.getElementById('menu1').style; obj.display=(obj.display=='none')?'block':'none';">
+<a style="cursor:pointer;">▼ スレッド</a>
+</div>
+<!--// 折りたたみ展開ボタン -->
+  
+<!-- ここから先を折りたたむ -->
+<div id="menu1" style="display:none;clear:both;">
+ 
+<!--この部分が折りたたまれ、展開ボタンをクリックすることで展開します。-->
+ <ul>
+   <li>yata</li>
+   <li>yasuda</li>
+   <li>yoshikawa</li>
+  <li>yata</li>
+   <li>yasuda</li>
+   <li>yoshikawa</li>
+  <li>yata</li>
+   <li>yasuda</li>
+   <li>yoshikawa</li>
+ </ul>
+</div>
+<!--// ここまでを折りたたむ -->
+</div>
+
+<div style="border: 1px solid #F0F0F0; width: 90%; height: 160px; overflow: auto;">
+<!-- 折りたたみ展開ボタン -->
+<div onclick="obj=document.getElementById('menu2').style; obj.display=(obj.display=='none')?'block':'none';">
+<a style="cursor:pointer;">▼ レビュー</a>
+</div>
+<!--// 折りたたみ展開ボタン -->
+  
+<!-- ここから先を折りたたむ -->
+<div id="menu2" style="display:none;clear:both;">
+ 
+<!--この部分が折りたたまれ、展開ボタンをクリックすることで展開します。-->
+ <ul>
+   <li>yata</li>
+   <li>yasuda</li>
+   <li>yoshikawa</li>
+   
+   <li>yata</li>
+   <li>yasuda</li>
+   <li>yoshikawa</li>
+   
+   <li>yata</li>
+   <li>yasuda</li>
+   <li>yoshikawa</li>
+ </ul>
+</div>
+<!--// ここまでを折りたたむ -->
+</div>
 </div>
 
 </template>
@@ -9,3 +60,5 @@
 <script>
 
 </script>
+
+
