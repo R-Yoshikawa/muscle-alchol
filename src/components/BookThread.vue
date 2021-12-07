@@ -56,7 +56,21 @@
 </div>
 <!--// ここまでを折りたたむ -->
 </div>
+<form action="#" method="post">
+
+	<p>入力内容：<br>
+<textarea name="comment" cols="30" rows="5"></textarea></p>
+</form>
+<button type="submit">返信</button>
+<form action="#" method="post">
+
+	<p>入力内容：<br>
+<textarea name="comment" cols="30" rows="5"></textarea></p>
+</form>
+<button>投稿</button>
+<button>いいね</button>
 </div>
+
 
 </template>
 
