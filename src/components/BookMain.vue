@@ -38,8 +38,16 @@ export default {
   margin: auto;
   background-color: aqua;
 }
-.list {
+.bookDetail {
   background-color: brown;
   color: darkgrey;
+}
+
+.img a {
+  display: block;
+  width: 400px;
+  height: 300px;
+  background: url(../../public/test.png) no-repeat;
+  float: left;
 }
 </style>
