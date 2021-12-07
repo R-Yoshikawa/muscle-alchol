@@ -6,11 +6,13 @@
 
 <script>
 import Book from "./components/Book.vue";
+import BookThread from "./components/BookThread.vue";
 
 export default {
   name: "App",
   components: {
     Book,
+    BookThread,
   },
 };
 </script>
