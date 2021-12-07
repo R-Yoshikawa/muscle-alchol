@@ -22,7 +22,11 @@ export default {
   data() {
     return {
       sampleData: {
+<<<<<<< HEAD
         title: "私の名前はぴえん",
+=======
+        title: "Titleはありません★",
+>>>>>>> origin/FeatureBookMain
         author: "Takumi",
         year: "2021/12/07",
         publisher: "A Compony",
