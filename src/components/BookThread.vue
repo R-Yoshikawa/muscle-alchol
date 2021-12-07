@@ -11,8 +11,8 @@
 <div id="menu1" style="display:none;clear:both;">
  
 <!--この部分が折りたたまれ、展開ボタンをクリックすることで展開します。-->
- <ul>
-   <li>yata3</li>
+ <ul style="list-style: none;">
+   <li>yata333333</li>
    <li>yasuda</li>
    <li>yoshikawa</li>
   <li>yata</li>
@@ -37,8 +37,11 @@
 <div id="menu2" style="display:none;clear:both;">
  
 <!--この部分が折りたたまれ、展開ボタンをクリックすることで展開します。-->
- <ul>
-   <li>yata</li>
+ <ul style="list-style: none;">
+   <li>yatayatayatayatayatayatayatayatayatayatayatayatayatayatayatayata 
+     <br>
+     yatayatayatayatayatayatayatayatayatayatayatayatayatayatayatayatayata
+   </li>
    <li>yasuda</li>
    <li>yoshikawa</li>
    
