@@ -5,21 +5,105 @@
     <input type="radio" name="tabset" id="tabcheck1" checked><label for="tabcheck1" class="tab">スレッド</label>
     <input type="radio" name="tabset" id="tabcheck2"        ><label for="tabcheck2" class="tab">レビュー</label>
     <div class="tabcontent" id="tabcontent1">
-      <div style="border: 1px solid #F0F0F0; width: 90%; height: 160px; overflow: auto;">
+      <div class="scrollbar">
         <ul style="list-style: none;">
-        <li class="subtitle">
+          <li>yata
+        <div class="subtitle">
+           <div>p.20について</div>
+          <div>～～～の意味が分かりません.。XXXということでしょうか？</div>
+
+    <div >
+             <table>
+              <tr>
+                <td><button>↵</button></td>
+                <td><button>💛</button></td>
+              </tr>
+            </table>
+          </div>
+          <div onclick="obj=document.getElementById('menu1').style; obj.display=(obj.display=='none')?'block':'none';">
+<a style="cursor:pointer;">▼ 返信を見る</a>
+</div>
+<!--// 折りたたみ展開ボタン -->
+
+<!-- ここから先を折りたたむ -->
+<div id="menu1" style="display:none;clear:both;">
+
+<!--この部分が折りたたまれ、展開ボタンをクリックすることで展開します。-->
+    <ul style="list-style: none;">
+   <li>yata
+   <div class="subtitle">
+          
+          <div>～～～の意味が分かりません.。XXXということでしょうか？</div>
+          <div style="text-align: right;">
+            <table>
+              <tr>
+                <td><button>↵</button></td>
+                <td><button>💛</button></td>
+              </tr>
+            </table>
+            
+            
+          </div>
+          </div>
+        </li>
+   <li>yasuda
+    <div class="subtitle">
+          
+          <div>～～～の意味が分かりません.。XXXということでしょうか？</div>
+          <div style="text-align: right;">
+            <button>💛</button>
+          </div>
+          </div>
+        </li>
+   <li>yoshikawa
+    <div class="subtitle">
+          
+          <div>～～～の意味が分かりません.。XXXということでしょうか？</div>
+          <div style="text-align: right;">
+            <button>💛</button>
+          </div>
+          </div>
+        </li>
+  
+ </ul>
+</div>
+
+<!--// ここまでを折りたたむ -->
+        
+
+      
+
+        </div>
+
+        </li>
+
+        <li>yasuda
+         <div class="subtitle">
           <div>p.20について</div>
           <div>～～～の意味が分かりません.。XXXということでしょうか？</div>
           <div style="text-align: right;">
             <button>💛</button>
           </div>
+          </div>
         </li>
-        <li class="subtitle">
+
+        <li>yoshikawa
+         <div class="subtitle">
+          <div>p.20について</div>
+          <div>～～～の意味が分かりません.。XXXということでしょうか？</div>
+          <div style="text-align: right;">
+            <button>💛</button>
+          </div>
+         </div>
+        </li>
+        <li>onuki
+        <div class="subtitle">
           <div>教えてください</div>
           <div>p。25の～～～は、どういう意味ですか</div><br>
           <div style="text-align: right;">
             <button>💛</button>
           </div>
+        </div>
         </li>
         </ul>
       </div>
@@ -29,13 +113,27 @@
         </div>
         <p>入力内容：<br>
         <textarea name="comment" cols="30" rows="5"></textarea></p>
-        <button type="submit">返信</button>
+        <button type="submit">投稿</button>
       </form>
 
     </div>
     <div class="tabcontent" id="tabcontent2">
-      <div style="border: 1px solid #F0F0F0; width: 90%; height: 160px; overflow: auto;">
+      <div class="scrollbar">
         <ul style="list-style: none;">
+        <li class="subtitle">
+          <div>タイトル</div>
+          <div>コンテント</div>
+          <div style="text-align: right;">
+            <button>💛</button>
+          </div>
+        </li>
+        <li class="subtitle">
+          <div>タイトル</div>
+          <div>コンテント</div>
+          <div style="text-align: right;">
+            <button>💛</button>
+          </div>
+        </li>
         <li class="subtitle">
           <div>タイトル</div>
           <div>コンテント</div>
@@ -66,7 +164,7 @@
         </div>
       <p>入力内容：<br>
       <textarea name="comment" cols="30" rows="5"></textarea></p>
-      <button type="submit">返信</button>
+      <button type="submit">投稿</button>
     </form>
 
 
@@ -138,5 +236,8 @@
      border-width: 1px 1px 1px 1px;
      padding: 5px;
      margin: 5px;
+   }
+   .scrollbar{
+     border: 1px solid #F0F0F0; width: 90%; height: 300px; overflow: auto;
    }
 </style>
