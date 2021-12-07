@@ -1,18 +1,29 @@
 <template>
   <div class="">
     <div class="Title">
-      <h1>{{ sampleData.title }}</h1>
+      <h1></h1>
     </div>
 
-    <div class="img">
-      <a href="#"></a>
-    </div>
+    <div class="bookDescription">
+      <div class="img">
+        <a href="#"></a>
+      </div>
 
-    <div class="bookDetail">
-      <p>著者 ：{{ sampleData.author }}</p>
-      <p>出版年：{{ sampleData.year }}</p>
-      <p>出版社：{{ sampleData.publisher }}</p>
-      <p>概要 ：{{ sampleData.descriptinon }}</p>
+      <div class="bookDetail">
+        <div class="bookTitle">
+          <h2>{{ sampleData.title }}</h2>
+        </div>
+        <p><b>著者：</b> {{ sampleData.author }}</p>
+        <p><b>出版年：</b> {{ sampleData.year }}</p>
+        <p><b>出版社：</b> {{ sampleData.publisher }}</p>
+        <div class="bookDescription">
+          <div class="grad-wrap">
+            <input id="trigger1" class="grad-trigger" type="checkbox" />
+            <label class="grad-btn" for="trigger1"></label>
+            <div class="grad-item">{{ sampleData.descriptinon }}</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -22,15 +33,14 @@ export default {
   data() {
     return {
       sampleData: {
-        title: "SCRUM BOOT CAMP THE BOOK【増補改訂版】 スクラムチームではじめるアジャイル開発",
+        title:
+          "SCRUM BOOT CAMP THE BOOK【増補改訂版】 スクラムチームではじめるアジャイル開発",
         author: `西村 直人
                 永瀬 美穂
                 吉羽 龍太郎`,
         year: "2020/05/20",
         publisher: "翔泳社",
-        descriptinon:
-          `はじめて「スクラム」をやることになったら読む本が7年ぶりに増補改訂！
-
+        descriptinon: `はじめて「スクラム」をやることになったら読む本が7年ぶりに増補改訂！
           近年、より複雑化しているプロダクト開発をチームでうまく進めていく手法として、
           世界中で注目されている「スクラム」。実際の開発現場にどう適用すればよいのかを、
           とにかくわかりやすく解説しています。
@@ -75,22 +85,83 @@ export default {
 .main {
   margin: auto;
 }
+
+.bookDescription {
+  display: flex;
+  justify-content: start;
+}
 .bookDetail {
+  width: 700px;
   color: rgb(87, 86, 86);
   text-align: left;
-  margin-left: 3px;
   text-indent: -3.2em;
   white-space: pre-line;
 }
 
-.img a {
-  display: block;
+.img {
   width: 300px;
-  height: 300px;
   background: url(../../public/sampleImage.png) no-repeat;
   background-size: 60%;
   background-position: 50%;
-  background-position-y: -10px;
-  float: left;
+  background-position-y: 50px;
+}
+
+.grad-btn {
+  /*.grad-btnのCSSは表示/非表示の動作には関係ないので、ご自由にどうぞ。*/
+}
+.grad-btn::before {
+  content: "概要の続きを読む";
+}
+.grad-item {
+  position: relative;
+  overflow: hidden;
+  height: 80px; /*隠した状態の高さ*/
+}
+.grad-item::before {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px; /*グラデーションで隠す高さ*/
+  background: -webkit-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(255, 255, 255, 0.9) 50%,
+    #fff 100%
+  );
+  background: linear-gradient(
+    top,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(255, 255, 255, 0.9) 50%,
+    #fff 100%
+  );
+  content: "";
+}
+.grad-trigger {
+  display: none; /*チェックボックスは常に非表示*/
+}
+.grad-trigger:checked ~ .grad-btn::before {
+  content: "閉じる"; /*チェックされていたら、文言を変更する*/
+}
+.grad-trigger:checked ~ .grad-item {
+  height: auto; /*チェックされていたら、高さを戻す*/
+}
+.grad-trigger:checked ~ .grad-item::before {
+  display: none; /*チェックされていたら、grad-itemのbeforeを非表示にする*/
+}
+.bookTitle {
+  text-indent: 0;
+  position: relative;
+  right: 3em;
+}
+
+.bookDescription {
+  text-indent: 0;
+  position: relative;
+  right: 3em;
+  padding-bottom: 1em;
 }
 </style>
