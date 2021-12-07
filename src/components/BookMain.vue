@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="">
     <div class="Title">
       <h1>{{ sampleData.title }}</h1>
     </div>
@@ -9,10 +9,10 @@
     </div>
 
     <div class="bookDetail">
-      <p>{{ sampleData.author }}</p>
-      <p>{{ sampleData.year }}</p>
-      <p>{{ sampleData.publisher }}</p>
-      <p>{{ sampleData.descriptinon }}</p>
+      <p>著者 ：{{ sampleData.author }}</p>
+      <p>出版年：{{ sampleData.year }}</p>
+      <p>出版社：{{ sampleData.publisher }}</p>
+      <p>概要 ：{{ sampleData.descriptinon }}</p>
     </div>
   </div>
 </template>
@@ -22,11 +22,12 @@ export default {
   data() {
     return {
       sampleData: {
-        title: "Titleはありません",
+        title: "私の名前はぴえん",
         author: "Takumi",
         year: "2021/12/07",
         publisher: "A Compony",
-        descriptinon: "この本は読んだら死にます",
+        descriptinon:
+          "この本は読んだら死にます。あなたは明日には今いるところからいなくなります。さて、残りの人生で何をしますか？",
       },
     };
   },
@@ -36,18 +37,22 @@ export default {
 <style>
 .main {
   margin: auto;
-  background-color: aqua;
 }
 .bookDetail {
-  background-color: brown;
-  color: darkgrey;
+  color: rgb(87, 86, 86);
+  text-align: left;
+  margin-left: 3px;
+  text-indent: -3.5em;
 }
 
 .img a {
   display: block;
-  width: 400px;
+  width: 300px;
   height: 300px;
   background: url(../../public/test.png) no-repeat;
+  background-size: 60%;
+  background-position: 50%;
+  background-position-y: -10px;
   float: left;
 }
 </style>
