@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mainBook">
     <Header />
     <BookMain />
     <BookThread />
@@ -20,4 +20,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.mainBook {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 5000px;
+}
+</style>

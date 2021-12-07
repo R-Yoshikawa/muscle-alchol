@@ -16,7 +16,7 @@
         <p><b>著者：</b> {{ sampleData.author }}</p>
         <p><b>出版年：</b> {{ sampleData.year }}</p>
         <p><b>出版社：</b> {{ sampleData.publisher }}</p>
-        <div class="bookDescription">
+        <div class="bookTitle">
           <div class="grad-wrap">
             <input id="trigger1" class="grad-trigger" type="checkbox" />
             <label class="grad-btn" for="trigger1"></label>
@@ -105,25 +105,56 @@ export default {
   background-position: 50%;
   background-position-y: 50px;
 }
-
-.grad-btn {
-  /*.grad-btnのCSSは表示/非表示の動作には関係ないので、ご自由にどうぞ。*/
+.grad-wrap {
+  position: relative;
 }
-.grad-btn::before {
-  content: "概要の続きを読む";
+.grad-wrap + .grad-wrap {
+  margin-top: 40px;
+}
+.grad-btn {
+  z-index: 2;
+  position: absolute;
+  right: 0;
+  left: 10em;
+  bottom: -2em;
+  width: 148px;
+  margin: auto;
+  padding: 0.5em 0;
+  border-radius: 2px;
+  background: #93b9b6;
+  color: #fff;
+  font-size: 0.8rem;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.grad-btn::after {
+  content: "続きを読む";
+}
+.grad-btn:hover {
+  background: #fff;
+  color: #009e8f;
+}
+.grad-btn .fa {
+  margin-right: 0.5em;
 }
 .grad-item {
   position: relative;
   overflow: hidden;
-  height: 80px; /*隠した状態の高さ*/
+  height: 80px;
+}
+.grad-item p + p {
+  margin-top: 1em;
 }
 .grad-item::before {
   display: block;
   position: absolute;
   bottom: 0;
   left: 0;
+  content: "";
   width: 100%;
-  height: 40px; /*グラデーションで隠す高さ*/
+  height: 40px; /*グラデーションで隠す範囲*/
   background: -webkit-linear-gradient(
     top,
     rgba(255, 255, 255, 0) 0%,
@@ -138,20 +169,26 @@ export default {
     rgba(255, 255, 255, 0.9) 50%,
     #fff 100%
   );
-  content: "";
 }
 .grad-trigger {
-  display: none; /*チェックボックスは常に非表示*/
+  display: none;
 }
-.grad-trigger:checked ~ .grad-btn::before {
-  content: "閉じる"; /*チェックされていたら、文言を変更する*/
+.grad-trigger:checked ~ .grad-btn {
+  bottom: -2em;
+}
+.grad-trigger:checked ~ .grad-btn::after {
+  content: "閉じる";
+}
+.grad-trigger:checked ~ .grad-btn .fa {
+  transform: rotate(180deg);
 }
 .grad-trigger:checked ~ .grad-item {
-  height: auto; /*チェックされていたら、高さを戻す*/
+  height: auto;
 }
 .grad-trigger:checked ~ .grad-item::before {
-  display: none; /*チェックされていたら、grad-itemのbeforeを非表示にする*/
+  display: none;
 }
+
 .bookTitle {
   text-indent: 0;
   position: relative;
@@ -162,6 +199,6 @@ export default {
   text-indent: 0;
   position: relative;
   right: 3em;
-  padding-bottom: 1em;
+  padding-bottom: 3em;
 }
 </style>
