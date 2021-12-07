@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       sampleData: {
-        title: "Title",
+        title: "Titleはありません",
         author: "Takumi",
         year: "2021/12/07",
         publisher: "A Compony",
