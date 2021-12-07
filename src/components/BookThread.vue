@@ -12,7 +12,7 @@
  
 <!--この部分が折りたたまれ、展開ボタンをクリックすることで展開します。-->
  <ul>
-   <li>yata</li>
+   <li>yata3</li>
    <li>yasuda</li>
    <li>yoshikawa</li>
   <li>yata</li>
