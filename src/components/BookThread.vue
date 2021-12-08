@@ -47,7 +47,7 @@
                         <div>
                           ～～～の意味が分かりません.。XXXということでしょうか？
                         </div>
-                        <div style="text-align: right">
+                        <div>
                           <table>
                             <tr>
                               <td><button>↵</button></td>
@@ -63,8 +63,13 @@
                         <div>
                           ～～～の意味が分かりません.。XXXということでしょうか？
                         </div>
-                        <div style="text-align: right">
-                          <button>💛</button>
+                        <div>
+                          <table>
+                            <tr>
+                              <td><button>↵</button></td>
+                              <td><button>💛</button></td>
+                            </tr>
+                          </table>
                         </div>
                       </div>
                     </li>
@@ -74,8 +79,13 @@
                         <div>
                           ～～～の意味が分かりません.。XXXということでしょうか？
                         </div>
-                        <div style="text-align: right">
-                          <button>💛</button>
+                        <div>
+                          <table>
+                            <tr>
+                              <td><button>↵</button></td>
+                              <td><button>💛</button></td>
+                            </tr>
+                          </table>
                         </div>
                       </div>
                     </li>
@@ -93,9 +103,78 @@
                 <div>
                   ～～～の意味が分かりません.。XXXということでしょうか？
                 </div>
-                <div style="text-align: right">
-                  <button>💛</button>
+
+                <div>
+                  <table>
+                    <tr>
+                      <td><button>↵</button></td>
+                      <td><button>💛</button></td>
+                    </tr>
+                  </table>
                 </div>
+                <div
+                  onclick="obj=document.getElementById('menu1').style; obj.display=(obj.display=='none')?'block':'none';"
+                >
+                  <a style="cursor: pointer">▼ 返信を見る</a>
+                </div>
+                <!--// 折りたたみ展開ボタン -->
+
+                <!-- ここから先を折りたたむ -->
+                <div id="menu1" style="display: none; clear: both">
+                  <!--この部分が折りたたまれ、展開ボタンをクリックすることで展開します。-->
+                  <ul style="list-style: none">
+                    <li>
+                      yata
+                      <div class="subtitle">
+                        <div>
+                          ～～～の意味が分かりません.。XXXということでしょうか？
+                        </div>
+                        <div style="text-align: right">
+                          <table>
+                            <tr>
+                              <td><button>↵</button></td>
+                              <td><button>💛</button></td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      yasuda
+                      <div class="subtitle">
+                        <div>
+                          ～～～の意味が分かりません.。XXXということでしょうか？
+                        </div>
+                        <div>
+                          <table>
+                            <tr>
+                              <td><button>↵</button></td>
+                              <td><button>💛</button></td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      yoshikawa
+                      <div class="subtitle">
+                        <div>
+                          ～～～の意味が分かりません.。XXXということでしょうか？
+                        </div>
+                        <div>
+                          <table>
+                            <tr>
+                              <td><button>↵</button></td>
+                              <td><button>💛</button></td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <!--// ここまでを折りたたむ -->
               </div>
             </li>
 
@@ -106,20 +185,159 @@
                 <div>
                   ～～～の意味が分かりません.。XXXということでしょうか？
                 </div>
-                <div style="text-align: right">
-                  <button>💛</button>
+
+                <div>
+                  <table>
+                    <tr>
+                      <td><button>↵</button></td>
+                      <td><button>💛</button></td>
+                    </tr>
+                  </table>
                 </div>
+                <div
+                  onclick="obj=document.getElementById('menu1').style; obj.display=(obj.display=='none')?'block':'none';"
+                >
+                  <a style="cursor: pointer">▼ 返信を見る</a>
+                </div>
+                <!--// 折りたたみ展開ボタン -->
+
+                <!-- ここから先を折りたたむ -->
+                <div id="menu1" style="display: none; clear: both">
+                  <!--この部分が折りたたまれ、展開ボタンをクリックすることで展開します。-->
+                  <ul style="list-style: none">
+                    <li>
+                      yata
+                      <div class="subtitle">
+                        <div>
+                          ～～～の意味が分かりません.。XXXということでしょうか？
+                        </div>
+                        <div style="text-align: right">
+                          <table>
+                            <tr>
+                              <td><button>↵</button></td>
+                              <td><button>💛</button></td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      yasuda
+                      <div class="subtitle">
+                        <div>
+                          ～～～の意味が分かりません.。XXXということでしょうか？
+                        </div>
+                        <div>
+                          <table>
+                            <tr>
+                              <td><button>↵</button></td>
+                              <td><button>💛</button></td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      yoshikawa
+                      <div class="subtitle">
+                        <div>
+                          ～～～の意味が分かりません.。XXXということでしょうか？
+                        </div>
+                        <div>
+                          <table>
+                            <tr>
+                              <td><button>↵</button></td>
+                              <td><button>💛</button></td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <!--// ここまでを折りたたむ -->
               </div>
             </li>
             <li>
               onuki
               <div class="subtitle">
-                <div>教えてください</div>
-                <div>p。25の～～～は、どういう意味ですか</div>
-                <br />
-                <div style="text-align: right">
-                  <button>💛</button>
+                <div>p.20について</div>
+                <div>
+                  ～～～の意味が分かりません.。XXXということでしょうか？
                 </div>
+
+                <div>
+                  <table>
+                    <tr>
+                      <td><button>↵</button></td>
+                      <td><button>💛</button></td>
+                    </tr>
+                  </table>
+                </div>
+                <div
+                  onclick="obj=document.getElementById('menu1').style; obj.display=(obj.display=='none')?'block':'none';"
+                >
+                  <a style="cursor: pointer">▼ 返信を見る</a>
+                </div>
+                <!--// 折りたたみ展開ボタン -->
+
+                <!-- ここから先を折りたたむ -->
+                <div id="menu1" style="display: none; clear: both">
+                  <!--この部分が折りたたまれ、展開ボタンをクリックすることで展開します。-->
+                  <ul style="list-style: none">
+                    <li>
+                      yata
+                      <div class="subtitle">
+                        <div>
+                          ～～～の意味が分かりません.。XXXということでしょうか？
+                        </div>
+                        <div style="text-align: right">
+                          <table>
+                            <tr>
+                              <td><button>↵</button></td>
+                              <td><button>💛</button></td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      yasuda
+                      <div class="subtitle">
+                        <div>
+                          ～～～の意味が分かりません.。XXXということでしょうか？
+                        </div>
+                        <div>
+                          <table>
+                            <tr>
+                              <td><button>↵</button></td>
+                              <td><button>💛</button></td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      yoshikawa
+                      <div class="subtitle">
+                        <div>
+                          ～～～の意味が分かりません.。XXXということでしょうか？
+                        </div>
+                        <div>
+                          <table>
+                            <tr>
+                              <td><button>↵</button></td>
+                              <td><button>💛</button></td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <!--// ここまでを折りたたむ -->
               </div>
             </li>
           </ul>
@@ -142,21 +360,21 @@
             <li class="subtitle">
               <div>タイトル</div>
               <div>コンテント</div>
-              <div style="text-align: right">
+              <div style="text-align: left">
                 <button>💛</button>
               </div>
             </li>
             <li class="subtitle">
               <div>タイトル</div>
               <div>コンテント</div>
-              <div style="text-align: right">
+              <div style="text-align: left">
                 <button>💛</button>
               </div>
             </li>
             <li class="subtitle">
               <div>タイトル</div>
               <div>コンテント</div>
-              <div style="text-align: right">
+              <div style="text-align: left">
                 <button>💛</button>
               </div>
             </li>
@@ -164,14 +382,14 @@
               <div>おもんない！</div>
               <div>最悪でした</div>
               <br />
-              <div style="text-align: right">
+              <div style="text-align: left">
                 <button>💛</button>
               </div>
             </li>
             <li class="subtitle">
               <div>絶対読むべき！</div>
               <div>もっと早くこの本に出合いたかったです。</div>
-              <div style="text-align: right">
+              <div style="text-align: left">
                 <button>💛</button>
               </div>
             </li>
