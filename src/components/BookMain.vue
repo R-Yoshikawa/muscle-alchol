@@ -1,9 +1,5 @@
 <template>
   <div class="">
-    <div class="Title">
-      <h1></h1>
-    </div>
-
     <div class="bookDescription">
       <div class="img">
         <a href="#"></a>
@@ -107,6 +103,7 @@ export default {
 }
 .grad-wrap {
   position: relative;
+  font-size: 80%;
 }
 .grad-wrap + .grad-wrap {
   margin-top: 40px;
@@ -174,7 +171,7 @@ export default {
   display: none;
 }
 .grad-trigger:checked ~ .grad-btn {
-  bottom: -2em;
+  bottom: -2.5em;
 }
 .grad-trigger:checked ~ .grad-btn::after {
   content: "閉じる";
