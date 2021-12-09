@@ -4,23 +4,182 @@
       <input type="radio" name="tabset" id="tabcheck1" checked /><label
         for="tabcheck1"
         class="tab"
-        >スレッド</label
+        >質問</label
       >
       <input type="radio" name="tabset" id="tabcheck2" /><label
         for="tabcheck2"
         class="tab"
+        >雑談</label
+      >
+      <input type="radio" name="tabset" id="tabcheck3" /><label
+        for="tabcheck3"
+        class="tab"
+        >イベント</label
+      >
+      <input type="radio" name="tabset" id="tabcheck4" /><label
+        for="tabcheck4"
+        class="tab"
         >レビュー</label
       >
+
       <div class="tabcontent" id="tabcontent1">
         <div class="scrollbar">
-          <ul style="list-style: none"></ul>
+          <ul style="list-style: none">
+            <li
+              v-for="(thread, indexThread) in sampleQuestion"
+              :key="indexThread"
+            >
+              <div class="subtitle">
+                <router-link to="/Mypage">
+                  <div>{{ thread.name }}</div>
+                </router-link>
+
+                <div
+                  onclick="obj=document.getElementById('menu1').style; obj.display=(obj.display=='none')?'block':'none';"
+                >
+                  <a style="cursor: pointer; font-weight: bold"
+                    >{{ thread.title }}
+                  </a>
+                </div>
+                <table>
+                  <tr>
+                    <td v-for="(tag, indexTag) in thread.tag" :key="indexTag">
+                      {{ tag }}
+                    </td>
+                  </tr>
+                </table>
+                <div>{{ thread.content }}</div>
+                <button>💛</button>
+
+                <!-- ここから先を折りたたむ -->
+                <div id="menu1" style="display: none; clear: both">
+                  <!--この部分が折りたたまれ、展開ボタンをクリックすることで展開します。-->
+                  <ul style="list-style: none">
+                    <li
+                      v-for="(reply, indexReply) in thread.reply"
+                      :key="indexReply"
+                    >
+                      {{ reply.name }}
+                      <div class="subtitle">
+                        <div>
+                          {{ reply.content }}
+                        </div>
+                        <table>
+                          <tr>
+                            <td><button>💛</button></td>
+                            <td v-if="indexReply == thread.reply.length - 1">
+                              <button>↵</button>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <!--// ここまでを折りたたむ -->
+              </div>
+            </li>
+          </ul>
         </div>
+        <form action="#" method="post" style="text-align: center">
+          <div style="text-align: center">
+            件名: <br />
+            <input type="text" name="content" style="display: inline-block" />
+          </div>
+          <p>
+            入力内容：<br />
+            <textarea name="comment" cols="30" rows="5"></textarea>
+          </p>
+          <button type="submit">投稿</button>
+        </form>
+      </div>
+
+      <div class="tabcontent" id="tabcontent2">
+        <div class="scrollbar">
+          <ul style="list-style: none">
+            <li>雑談を書くところ</li>
+          </ul>
+        </div>
+        <form action="#" method="post" style="text-align: center">
+          <div style="text-align: center">
+            件名: <br />
+            <input type="text" name="content" style="display: inline-block" />
+          </div>
+          <p>
+            入力内容：<br />
+            <textarea name="comment" cols="30" rows="5"></textarea>
+          </p>
+          <button type="submit">投稿</button>
+        </form>
+      </div>
+
+      <div class="tabcontent" id="tabcontent3">
+        <div class="scrollbar">
+          <ul style="list-style: none">
+            <li>イベントを書くところ</li>
+          </ul>
+        </div>
+        <form action="#" method="post" style="text-align: center">
+          <div style="text-align: center">
+            件名: <br />
+            <input type="text" name="content" style="display: inline-block" />
+          </div>
+          <p>
+            入力内容：<br />
+            <textarea name="comment" cols="30" rows="5"></textarea>
+          </p>
+          <button type="submit">投稿</button>
+        </form>
+      </div>
+      <div class="tabcontent" id="tabcontent4">
+        <div class="scrollbar">
+          <ul style="list-style: none">
+            <li
+              v-for="(review, indexReview) in sampleReview"
+              :key="indexReview"
+            >
+              {{ review.name }}
+              <div class="subtitle">
+                <div>{{ review.title }}</div>
+                <div>{{ review.content }}</div>
+                <div style="text-align: left">
+                  <button>💛</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <form action="#" method="post" style="text-align: center">
+          <div style="text-align: center">
+            件名: <br />
+            <input type="text" name="content" style="display: inline-block" />
+          </div>
+          <p>
+            入力内容：<br />
+            <textarea name="comment" cols="30" rows="5"></textarea>
+          </p>
+          <button type="submit">投稿</button>
+        </form>
       </div>
     </div>
   </div>
 </template>
 
-<script></script>
+<script>
+import sampleReview from "../data/sampleReview_yata";
+import sampleQuestion from "../data/sampleQuestion_yata";
+
+export default {
+  data() {
+    return {
+      sampleReview,
+      sampleQuestion,
+    };
+  },
+};
+</script>
 
 <style type="text/css">
 /* ▼タブ機能の掲載領域の装飾(※必須ではありません) */
@@ -28,6 +187,7 @@
   margin: 0px;
   padding: 1em;
   background-color: #f8f8ff;
+  text-align: left;
 }
 
 /* ▼タブ機能を制御するラジオボタン(非表示にする) */
@@ -85,7 +245,15 @@ input:checked + .tab {
 #tabcheck3:checked ~ #tabcontent3 {
   display: block;
 }
-
+#tabcheck4:checked ~ #tabcontent4 {
+  display: block;
+}
+.subtitle {
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  padding: 5px;
+  margin: 5px;
+}
 .scrollbar {
   border: 1px solid #f0f0f0;
   width: 90%;
