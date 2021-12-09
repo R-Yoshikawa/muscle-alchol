@@ -3,17 +3,33 @@
     <div class="Title">
       <h1></h1>
     </div>
+    <div class="bookDescription">
+      <div class="userImage">
+        <div class="img">
+          <a href="#"></a>
+        </div>
 
-    <div class="userImage">
-      <div class="img">
-        <a href="#"></a>
+        <div class="userPoint">
+          <p>QAポイント:{{ userDetail.user_point }}</p>
+        </div>
       </div>
-
       <div class="userDetail">
-        <p>{{ sampleData.user_name }}</p>
-        <p>{{ sampleData.user_id }}</p>
-        <p>{{ sampleData.user_BU }}</p>
-        <p>{{ sampleData.user_history }}</p>
+        <p>{{ userDetail.user_name }}</p>
+        <p>{{ userDetail.user_id }}</p>
+        <p>{{ userDetail.user_BU }}</p>
+        <p>{{ userDetail.user_history }}</p>
+      </div>
+    </div>
+    <div class="bookList">
+      <p>読んだ本リスト</p>
+      <div class="bookDescription">
+        <div class="bookimg">
+          <a href="#"></a>
+        </div>
+        <div class="bookimg2">
+          <a href="#"></a>
+        </div>
+        <button>追加</button>
       </div>
     </div>
   </div>
@@ -23,7 +39,7 @@
 export default {
   data() {
     return {
-      sampleData: {
+      userDetail: {
         user_name: "日鉄 太郎",
         user_id: "N24410",
         user_BU: `金融ソリューション事業本部
@@ -33,6 +49,7 @@ export default {
                   ・2018/11 A銀行aシステム導入案件
                   ・2019/11 B銀行規制対応案件
                   ・2020/03 C銀行AWS構築案件`,
+        user_point: "100",
       },
     };
   },
@@ -63,6 +80,23 @@ export default {
   background-size: 60%;
   background-position: 50%;
   background-position-y: 50px;
+  height: 270px;
+}
+.bookimg {
+  width: 100px;
+  background: url(../../public/bookimg.png) no-repeat;
+  background-size: 60%;
+  background-position: 50%;
+  background-position-y: 50px;
+  height: 200px;
+}
+.bookimg2 {
+  width: 100px;
+  background: url(../../public/bookimg2.png) no-repeat;
+  background-size: 60%;
+  background-position: 50%;
+  background-position-y: 50px;
+  height: 200px;
 }
 .grad-wrap {
   position: relative;

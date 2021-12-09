@@ -1,15 +1,17 @@
 <template>
   <div class="mainMyPage">
     <MyPageProfile />
+    <MyPageThread />
   </div>
 </template>
 
 <script>
 import MyPageProfile from "./MyPageProfile.vue";
-
+import MyPageThread from "./MyPageThread.vue";
 export default {
   components: {
     MyPageProfile,
+    MyPageThread,
   },
 };
 </script>
