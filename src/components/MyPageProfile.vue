@@ -27,15 +27,19 @@
       </div>
     </div>
     <div class="bookList">
-      <p>読んだ本リスト</p>
-      <div class="bookDescription">
-        <div class="bookimg">
-          <a href="#"></a>
+      <div style="text-align: center">
+        <p>読んだ本リスト</p>
+        <div class="bookDescription">
+          <div class="bookimg">
+            <a href="#"></a>
+          </div>
+          <div class="bookimg2">
+            <a href="#"></a>
+          </div>
+          <div style="text-align: right">
+            <button>追加</button>
+          </div>
         </div>
-        <div class="bookimg2">
-          <a href="#"></a>
-        </div>
-        <button>追加</button>
       </div>
     </div>
   </div>
@@ -70,7 +74,7 @@ export default {
 
 .bookDescription {
   display: flex;
-  justify-content: start;
+  justify-content: center;
 }
 
 .userDetail {
@@ -96,6 +100,7 @@ export default {
   background-position: 50%;
   background-position-y: 50px;
   height: 200px;
+  text-align: center;
 }
 .bookimg2 {
   width: 100px;
@@ -104,6 +109,7 @@ export default {
   background-position: 50%;
   background-position-y: 50px;
   height: 200px;
+  text-align: center;
 }
 .grad-wrap {
   position: relative;
