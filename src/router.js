@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Book from "./components/Book.vue";
-import Mypage from "./components/Mypage.vue";
+import Mypage from "./components/MyPage.vue";
 Vue.use(Router);
 
 export default new Router({
