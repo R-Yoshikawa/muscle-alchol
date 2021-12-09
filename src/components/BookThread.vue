@@ -14,7 +14,10 @@
       <div class="tabcontent" id="tabcontent1">
         <div class="scrollbar">
           <ul style="list-style: none">
-            <li v-for="(thread, indexThread) in sampleData" :key="indexThread">
+            <li
+              v-for="(thread, indexThread) in sampleQuestion"
+              :key="indexThread"
+            >
               <div class="subtitle">
                 <div>{{ thread.name }}</div>
                 <div>{{ thread.title }}</div>
@@ -78,40 +81,17 @@
       <div class="tabcontent" id="tabcontent2">
         <div class="scrollbar">
           <ul style="list-style: none">
-            <li class="subtitle">
-              <div>タイトル</div>
-              <div>コンテント</div>
-              <div style="text-align: left">
-                <button>💛</button>
-              </div>
-            </li>
-            <li class="subtitle">
-              <div>タイトル</div>
-              <div>コンテント</div>
-              <div style="text-align: left">
-                <button>💛</button>
-              </div>
-            </li>
-            <li class="subtitle">
-              <div>タイトル</div>
-              <div>コンテント</div>
-              <div style="text-align: left">
-                <button>💛</button>
-              </div>
-            </li>
-            <li class="subtitle">
-              <div>おもんない！</div>
-              <div>最悪でした</div>
-              <br />
-              <div style="text-align: left">
-                <button>💛</button>
-              </div>
-            </li>
-            <li class="subtitle">
-              <div>絶対読むべき！</div>
-              <div>もっと早くこの本に出合いたかったです。</div>
-              <div style="text-align: left">
-                <button>💛</button>
+            <li
+              v-for="(review, indexReview) in sampleReview"
+              :key="indexReview"
+            >
+              {{ review.name }}
+              <div class="subtitle">
+                <div>{{ review.title }}</div>
+                <div>{{ review.content }}</div>
+                <div style="text-align: left">
+                  <button>💛</button>
+                </div>
               </div>
             </li>
           </ul>
@@ -134,51 +114,14 @@
 </template>
 
 <script>
+import sampleReview from "../data/sampleReview";
+import sampleQuestion from "../data/sampleQuestion";
+
 export default {
   data() {
     return {
-      sampleData: [
-        {
-          name: "yata",
-          title: "p.20について",
-          content: "～～～の意味が分かりません。XXXということでしょうか？",
-          reply: [
-            {
-              name: "yata",
-              content: "それは○○です",
-            },
-            {
-              name: "yasuda",
-              content:
-                "何言ってるかわかりません、もっとまともなことを聞いてください",
-            },
-            {
-              name: "yoshikawa",
-              content: "ggrks",
-            },
-          ],
-        },
-        {
-          name: "yata123",
-          title: "p.20について",
-          content: "～～～の意味が分かりません。XXXということでしょうか？",
-          reply: [
-            {
-              name: "yata456",
-              content: "それは○○です",
-            },
-            {
-              name: "yasuda789",
-              content:
-                "何言ってるかわかりません、もっとまともなことを聞いてください",
-            },
-            {
-              name: "yoshikawa012",
-              content: "ggrks",
-            },
-          ],
-        },
-      ],
+      sampleReview,
+      sampleQuestion,
     };
   },
 };
