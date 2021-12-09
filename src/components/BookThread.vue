@@ -34,15 +34,6 @@
                   <div>{{ thread.name }}</div>
                 </router-link>
 
-                <div>{{ thread.title }}</div>
-                <div>{{ thread.content }}</div>
-                <table>
-                  <tr>
-                    <td><button>↵</button></td>
-                    <td><button>💛</button></td>
-                  </tr>
-                </table>
-
                 <div
                   onclick="obj=document.getElementById('menu1').style; obj.display=(obj.display=='none')?'block':'none';"
                 >
