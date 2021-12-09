@@ -14,14 +14,11 @@
       <div class="tabcontent" id="tabcontent1">
         <div class="scrollbar">
           <ul style="list-style: none">
-            <li v-for="(thread, index) in sampleData" :key="index">
-              <div>
-                {{ thread.name }}
-              </div>
-              <div>{{ thread.title }}</div>
-              <div>{{ thread.content }}</div>
-
+            <li v-for="(thread, indexThread) in sampleData" :key="indexThread">
               <div class="subtitle">
+                <div>{{ thread.name }}</div>
+                <div>{{ thread.title }}</div>
+                <div>{{ thread.content }}</div>
                 <table>
                   <tr>
                     <td><button>↵</button></td>
@@ -40,11 +37,14 @@
                 <div id="menu1" style="display: none; clear: both">
                   <!--この部分が折りたたまれ、展開ボタンをクリックすることで展開します。-->
                   <ul style="list-style: none">
-                    <li>
-                      yata
+                    <li
+                      v-for="(reply, indexReply) in thread.reply"
+                      :key="indexReply"
+                    >
+                      {{ reply.name }}
                       <div class="subtitle">
                         <div>
-                          ～～～の意味が分かりません.。XXXということでしょうか？
+                          {{ reply.content }}
                         </div>
 
                         <table>
