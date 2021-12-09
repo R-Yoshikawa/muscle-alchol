@@ -1,9 +1,5 @@
 <template>
   <div class="">
-    <div class="Title">
-      <h1></h1>
-    </div>
-
     <div class="bookDescription">
       <div class="img">
         <a href="#"></a>
