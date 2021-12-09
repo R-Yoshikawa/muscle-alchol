@@ -23,6 +23,13 @@
       >
 
       <div class="tabcontent" id="tabcontent1">
+        <div style="text-align: center">
+          検索:<input
+            type="text"
+            name="content"
+            style="display: inline-block"
+          />
+        </div>
         <div class="scrollbar">
           <ul style="list-style: none">
             <li
@@ -84,11 +91,11 @@
         </div>
         <form action="#" method="post" style="text-align: center">
           <div style="text-align: center">
-            件名: <br />
+            件名:
             <input type="text" name="content" style="display: inline-block" />
           </div>
           <p>
-            入力内容：<br />
+            入力内容<br />
             <textarea name="comment" cols="30" rows="5"></textarea>
           </p>
           <button type="submit">投稿</button>
@@ -96,6 +103,13 @@
       </div>
 
       <div class="tabcontent" id="tabcontent2">
+        <div style="text-align: center">
+          検索:<input
+            type="text"
+            name="content"
+            style="display: inline-block"
+          />
+        </div>
         <div class="scrollbar">
           <ul style="list-style: none">
             <li>雑談を書くところ</li>
@@ -103,11 +117,11 @@
         </div>
         <form action="#" method="post" style="text-align: center">
           <div style="text-align: center">
-            件名: <br />
+            件名:
             <input type="text" name="content" style="display: inline-block" />
           </div>
           <p>
-            入力内容：<br />
+            入力内容<br />
             <textarea name="comment" cols="30" rows="5"></textarea>
           </p>
           <button type="submit">投稿</button>
@@ -115,6 +129,13 @@
       </div>
 
       <div class="tabcontent" id="tabcontent3">
+        <div style="text-align: center">
+          検索:<input
+            type="text"
+            name="content"
+            style="display: inline-block"
+          />
+        </div>
         <div class="scrollbar">
           <ul style="list-style: none">
             <li>イベントを書くところ</li>
@@ -122,17 +143,24 @@
         </div>
         <form action="#" method="post" style="text-align: center">
           <div style="text-align: center">
-            件名: <br />
+            件名:
             <input type="text" name="content" style="display: inline-block" />
           </div>
           <p>
-            入力内容：<br />
+            入力内容<br />
             <textarea name="comment" cols="30" rows="5"></textarea>
           </p>
           <button type="submit">投稿</button>
         </form>
       </div>
       <div class="tabcontent" id="tabcontent4">
+        <div style="text-align: center">
+          検索:<input
+            type="text"
+            name="content"
+            style="display: inline-block"
+          />
+        </div>
         <div class="scrollbar">
           <ul style="list-style: none">
             <li
@@ -153,11 +181,11 @@
 
         <form action="#" method="post" style="text-align: center">
           <div style="text-align: center">
-            件名: <br />
+            件名:
             <input type="text" name="content" style="display: inline-block" />
           </div>
           <p>
-            入力内容：<br />
+            入力内容<br />
             <textarea name="comment" cols="30" rows="5"></textarea>
           </p>
           <button type="submit">投稿</button>
