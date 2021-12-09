@@ -4,13 +4,24 @@
       <input type="radio" name="tabset" id="tabcheck1" checked /><label
         for="tabcheck1"
         class="tab"
-        >スレッド</label
+        >質問</label
       >
       <input type="radio" name="tabset" id="tabcheck2" /><label
         for="tabcheck2"
         class="tab"
+        >雑談</label
+      >
+      <input type="radio" name="tabset" id="tabcheck3" /><label
+        for="tabcheck3"
+        class="tab"
+        >イベント</label
+      >
+      <input type="radio" name="tabset" id="tabcheck4" /><label
+        for="tabcheck4"
+        class="tab"
         >レビュー</label
       >
+
       <div class="tabcontent" id="tabcontent1">
         <div class="scrollbar">
           <ul style="list-style: none">
@@ -78,7 +89,45 @@
           <button type="submit">投稿</button>
         </form>
       </div>
+
       <div class="tabcontent" id="tabcontent2">
+        <div class="scrollbar">
+          <ul style="list-style: none">
+            <li>雑談を書くところ</li>
+          </ul>
+        </div>
+        <form action="#" method="post" style="text-align: center">
+          <div style="text-align: center">
+            件名: <br />
+            <input type="text" name="content" style="display: inline-block" />
+          </div>
+          <p>
+            入力内容：<br />
+            <textarea name="comment" cols="30" rows="5"></textarea>
+          </p>
+          <button type="submit">投稿</button>
+        </form>
+      </div>
+
+      <div class="tabcontent" id="tabcontent3">
+        <div class="scrollbar">
+          <ul style="list-style: none">
+            <li>イベントを書くところ</li>
+          </ul>
+        </div>
+        <form action="#" method="post" style="text-align: center">
+          <div style="text-align: center">
+            件名: <br />
+            <input type="text" name="content" style="display: inline-block" />
+          </div>
+          <p>
+            入力内容：<br />
+            <textarea name="comment" cols="30" rows="5"></textarea>
+          </p>
+          <button type="submit">投稿</button>
+        </form>
+      </div>
+      <div class="tabcontent" id="tabcontent4">
         <div class="scrollbar">
           <ul style="list-style: none">
             <li
@@ -133,6 +182,7 @@ export default {
   margin: 0px;
   padding: 1em;
   background-color: #f8f8ff;
+  text-align: left;
 }
 
 /* ▼タブ機能を制御するラジオボタン(非表示にする) */
@@ -190,7 +240,9 @@ input:checked + .tab {
 #tabcheck3:checked ~ #tabcontent3 {
   display: block;
 }
-
+#tabcheck4:checked ~ #tabcontent4 {
+  display: block;
+}
 .subtitle {
   border-style: solid;
   border-width: 1px 1px 1px 1px;
