@@ -19,6 +19,12 @@
         <p>{{ userDetail.user_BU }}</p>
         <p>{{ userDetail.user_history }}</p>
       </div>
+      <div class="userPoint">
+        <p>スキル</p>
+        <ul v-for="skill of user_skills" v-bind:key="skill.skill">
+          <li>{{ skill }}</li>
+        </ul>
+      </div>
     </div>
     <div class="bookList">
       <p>読んだ本リスト</p>
@@ -51,6 +57,7 @@ export default {
                   ・2020/03 C銀行AWS構築案件`,
         user_point: "100",
       },
+      user_skills: ["Java", "金融工学", "スクラム"],
     };
   },
 };
