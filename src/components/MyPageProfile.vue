@@ -9,26 +9,31 @@
           <a href="#"></a>
         </div>
 
-        <div class="userPoint">
+        <div>
           <p>QAポイント:{{ userDetail.user_point }}</p>
         </div>
       </div>
       <div class="userDetail">
-        <p>{{ userDetail.user_name }}</p>
-        <p>{{ userDetail.user_id }}</p>
+        <p>
+          <b>{{ userDetail.user_name }}</b> ({{ userDetail.user_id }})
+        </p>
         <p>{{ userDetail.user_BU }}</p>
-        <p>{{ userDetail.user_history }}</p>
+        <div>
+          <ul v-for="history of user_history" v-bind:key="history.history">
+            <p>{{ history }}</p>
+          </ul>
+        </div>
       </div>
-      <div class="userPoint">
-        <p>スキル</p>
+      <div class="skill">
+        <p><b>スキル</b></p>
         <ul v-for="skill of user_skills" v-bind:key="skill.skill">
-          <li>{{ skill }}</li>
+          <p>{{ skill }}</p>
         </ul>
       </div>
     </div>
     <div class="bookList">
       <div style="text-align: center">
-        <p>読んだ本リスト</p>
+        <p><b>読んだ本リスト</b></p>
         <div class="bookListLayout">
           <div class="bookimg">
             <a href="#"></a>
@@ -52,14 +57,16 @@ export default {
       userDetail: {
         user_name: "yata",
         user_id: "N12345",
-        user_BU: `テレコムソリューション事業部
-                  ○○部××グループ`,
-        user_history: `・2018/04 入社
-                  ・2018/11 aシステム導入案件
-                  ・2019/11 ローカル5G案件
-                  ・2020/03 AWS構築案件`,
+        user_BU: "テレコムソリューション事業部○○部××グループ",
+
         user_point: "100",
       },
+      user_history: [
+        "2018/04 入社",
+        "2018/11 aシステム導入案件",
+        "2019/11 ローカル5G案件",
+        "2020/03 AWS構築案件",
+      ],
       user_skills: ["Java", "AWS", "スクラム"],
     };
   },
@@ -73,7 +80,8 @@ export default {
 
 .profileLayout {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 30px 50px;
 }
 
 .bookListLayout {
@@ -86,7 +94,7 @@ export default {
 }
 
 .userDetail {
-  width: 700px;
+  width: 300px;
   color: rgb(87, 86, 86);
   text-align: left;
   text-indent: -3.2em;
@@ -94,12 +102,12 @@ export default {
 }
 
 .userimg {
-  width: 270px;
+  width: 150px;
   background: url(../../public/sampleUserImage.png) no-repeat;
   background-size: 90%;
   background-position: 60%;
   background-position-y: 20px;
-  height: 270px;
+  height: 150px;
   border-radius: 50%;
   border: 2px solid gray;
 }
@@ -121,6 +129,7 @@ export default {
   height: 350px;
   text-align: center;
 }
+
 .grad-wrap {
   position: relative;
 }
