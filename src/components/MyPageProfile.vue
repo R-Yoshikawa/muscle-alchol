@@ -5,7 +5,7 @@
     </div>
     <div class="bookDescription">
       <div class="userImage">
-        <div class="img">
+        <div class="userimg">
           <a href="#"></a>
         </div>
 
@@ -85,7 +85,7 @@ export default {
   white-space: pre-line;
 }
 
-.img {
+.userimg {
   width: 300px;
   background: url(../../public/sampleUserImage.png) no-repeat;
   background-size: 60%;

@@ -4,334 +4,74 @@
       <input type="radio" name="tabset" id="tabcheck1" checked /><label
         for="tabcheck1"
         class="tab"
-        >スレッド</label
+        >質問</label
       >
       <input type="radio" name="tabset" id="tabcheck2" /><label
         for="tabcheck2"
         class="tab"
+        >雑談</label
+      >
+      <input type="radio" name="tabset" id="tabcheck3" /><label
+        for="tabcheck3"
+        class="tab"
+        >イベント</label
+      >
+      <input type="radio" name="tabset" id="tabcheck4" /><label
+        for="tabcheck4"
+        class="tab"
         >レビュー</label
       >
+
       <div class="tabcontent" id="tabcontent1">
         <div class="scrollbar">
           <ul style="list-style: none">
-            <li>
-              yata
+            <li
+              v-for="(thread, indexThread) in sampleQuestion"
+              :key="indexThread"
+            >
               <div class="subtitle">
-                <div>p.20について</div>
-                <div>
-                  ～～～の意味が分かりません.。XXXということでしょうか？
-                </div>
+                <router-link to="/Mypage">
+                  <div>{{ thread.name }}</div>
+                </router-link>
 
-                <div>
-                  <table>
-                    <tr>
-                      <td><button>↵</button></td>
-                      <td><button>💛</button></td>
-                    </tr>
-                  </table>
-                </div>
                 <div
                   onclick="obj=document.getElementById('menu1').style; obj.display=(obj.display=='none')?'block':'none';"
                 >
-                  <a style="cursor: pointer">▼ 返信を見る</a>
+                  <a style="cursor: pointer; font-weight: bold"
+                    >{{ thread.title }}
+                  </a>
                 </div>
-                <!--// 折りたたみ展開ボタン -->
+                <table>
+                  <tr>
+                    <td v-for="(tag, indexTag) in thread.tag" :key="indexTag">
+                      {{ tag }}
+                    </td>
+                  </tr>
+                </table>
+                <div>{{ thread.content }}</div>
+                <button>💛</button>
 
                 <!-- ここから先を折りたたむ -->
                 <div id="menu1" style="display: none; clear: both">
                   <!--この部分が折りたたまれ、展開ボタンをクリックすることで展開します。-->
                   <ul style="list-style: none">
-                    <li>
-                      yata
+                    <li
+                      v-for="(reply, indexReply) in thread.reply"
+                      :key="indexReply"
+                    >
+                      {{ reply.name }}
                       <div class="subtitle">
                         <div>
-                          ～～～の意味が分かりません.。XXXということでしょうか？
+                          {{ reply.content }}
                         </div>
-                        <div>
-                          <table>
-                            <tr>
-                              <td><button>↵</button></td>
-                              <td><button>💛</button></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      yasuda
-                      <div class="subtitle">
-                        <div>
-                          ～～～の意味が分かりません.。XXXということでしょうか？
-                        </div>
-                        <div>
-                          <table>
-                            <tr>
-                              <td><button>↵</button></td>
-                              <td><button>💛</button></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      yoshikawa
-                      <div class="subtitle">
-                        <div>
-                          ～～～の意味が分かりません.。XXXということでしょうか？
-                        </div>
-                        <div>
-                          <table>
-                            <tr>
-                              <td><button>↵</button></td>
-                              <td><button>💛</button></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-
-                <!--// ここまでを折りたたむ -->
-              </div>
-            </li>
-
-            <li>
-              yasuda
-              <div class="subtitle">
-                <div>p.20について</div>
-                <div>
-                  ～～～の意味が分かりません.。XXXということでしょうか？
-                </div>
-
-                <div>
-                  <table>
-                    <tr>
-                      <td><button>↵</button></td>
-                      <td><button>💛</button></td>
-                    </tr>
-                  </table>
-                </div>
-                <div
-                  onclick="obj=document.getElementById('menu1').style; obj.display=(obj.display=='none')?'block':'none';"
-                >
-                  <a style="cursor: pointer">▼ 返信を見る</a>
-                </div>
-                <!--// 折りたたみ展開ボタン -->
-
-                <!-- ここから先を折りたたむ -->
-                <div id="menu1" style="display: none; clear: both">
-                  <!--この部分が折りたたまれ、展開ボタンをクリックすることで展開します。-->
-                  <ul style="list-style: none">
-                    <li>
-                      yata
-                      <div class="subtitle">
-                        <div>
-                          ～～～の意味が分かりません.。XXXということでしょうか？
-                        </div>
-                        <div style="text-align: right">
-                          <table>
-                            <tr>
-                              <td><button>↵</button></td>
-                              <td><button>💛</button></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      yasuda
-                      <div class="subtitle">
-                        <div>
-                          ～～～の意味が分かりません.。XXXということでしょうか？
-                        </div>
-                        <div>
-                          <table>
-                            <tr>
-                              <td><button>↵</button></td>
-                              <td><button>💛</button></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      yoshikawa
-                      <div class="subtitle">
-                        <div>
-                          ～～～の意味が分かりません.。XXXということでしょうか？
-                        </div>
-                        <div>
-                          <table>
-                            <tr>
-                              <td><button>↵</button></td>
-                              <td><button>💛</button></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-
-                <!--// ここまでを折りたたむ -->
-              </div>
-            </li>
-
-            <li>
-              yoshikawa
-              <div class="subtitle">
-                <div>p.20について</div>
-                <div>
-                  ～～～の意味が分かりません.。XXXということでしょうか？
-                </div>
-
-                <div>
-                  <table>
-                    <tr>
-                      <td><button>↵</button></td>
-                      <td><button>💛</button></td>
-                    </tr>
-                  </table>
-                </div>
-                <div
-                  onclick="obj=document.getElementById('menu1').style; obj.display=(obj.display=='none')?'block':'none';"
-                >
-                  <a style="cursor: pointer">▼ 返信を見る</a>
-                </div>
-                <!--// 折りたたみ展開ボタン -->
-
-                <!-- ここから先を折りたたむ -->
-                <div id="menu1" style="display: none; clear: both">
-                  <!--この部分が折りたたまれ、展開ボタンをクリックすることで展開します。-->
-                  <ul style="list-style: none">
-                    <li>
-                      yata
-                      <div class="subtitle">
-                        <div>
-                          ～～～の意味が分かりません.。XXXということでしょうか？
-                        </div>
-                        <div style="text-align: right">
-                          <table>
-                            <tr>
-                              <td><button>↵</button></td>
-                              <td><button>💛</button></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      yasuda
-                      <div class="subtitle">
-                        <div>
-                          ～～～の意味が分かりません.。XXXということでしょうか？
-                        </div>
-                        <div>
-                          <table>
-                            <tr>
-                              <td><button>↵</button></td>
-                              <td><button>💛</button></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      yoshikawa
-                      <div class="subtitle">
-                        <div>
-                          ～～～の意味が分かりません.。XXXということでしょうか？
-                        </div>
-                        <div>
-                          <table>
-                            <tr>
-                              <td><button>↵</button></td>
-                              <td><button>💛</button></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-
-                <!--// ここまでを折りたたむ -->
-              </div>
-            </li>
-            <li>
-              onuki
-              <div class="subtitle">
-                <div>p.20について</div>
-                <div>
-                  ～～～の意味が分かりません.。XXXということでしょうか？
-                </div>
-
-                <div>
-                  <table>
-                    <tr>
-                      <td><button>↵</button></td>
-                      <td><button>💛</button></td>
-                    </tr>
-                  </table>
-                </div>
-                <div
-                  onclick="obj=document.getElementById('menu1').style; obj.display=(obj.display=='none')?'block':'none';"
-                >
-                  <a style="cursor: pointer">▼ 返信を見る</a>
-                </div>
-                <!--// 折りたたみ展開ボタン -->
-
-                <!-- ここから先を折りたたむ -->
-                <div id="menu1" style="display: none; clear: both">
-                  <!--この部分が折りたたまれ、展開ボタンをクリックすることで展開します。-->
-                  <ul style="list-style: none">
-                    <li>
-                      yata
-                      <div class="subtitle">
-                        <div>
-                          ～～～の意味が分かりません.。XXXということでしょうか？
-                        </div>
-                        <div style="text-align: right">
-                          <table>
-                            <tr>
-                              <td><button>↵</button></td>
-                              <td><button>💛</button></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      yasuda
-                      <div class="subtitle">
-                        <div>
-                          ～～～の意味が分かりません.。XXXということでしょうか？
-                        </div>
-                        <div>
-                          <table>
-                            <tr>
-                              <td><button>↵</button></td>
-                              <td><button>💛</button></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      yoshikawa
-                      <div class="subtitle">
-                        <div>
-                          ～～～の意味が分かりません.。XXXということでしょうか？
-                        </div>
-                        <div>
-                          <table>
-                            <tr>
-                              <td><button>↵</button></td>
-                              <td><button>💛</button></td>
-                            </tr>
-                          </table>
-                        </div>
+                        <table>
+                          <tr>
+                            <td><button>💛</button></td>
+                            <td v-if="indexReply == thread.reply.length - 1">
+                              <button>↵</button>
+                            </td>
+                          </tr>
+                        </table>
                       </div>
                     </li>
                   </ul>
@@ -354,43 +94,58 @@
           <button type="submit">投稿</button>
         </form>
       </div>
+
       <div class="tabcontent" id="tabcontent2">
         <div class="scrollbar">
           <ul style="list-style: none">
-            <li class="subtitle">
-              <div>タイトル</div>
-              <div>コンテント</div>
-              <div style="text-align: left">
-                <button>💛</button>
-              </div>
-            </li>
-            <li class="subtitle">
-              <div>タイトル</div>
-              <div>コンテント</div>
-              <div style="text-align: left">
-                <button>💛</button>
-              </div>
-            </li>
-            <li class="subtitle">
-              <div>タイトル</div>
-              <div>コンテント</div>
-              <div style="text-align: left">
-                <button>💛</button>
-              </div>
-            </li>
-            <li class="subtitle">
-              <div>おもんない！</div>
-              <div>最悪でした</div>
-              <br />
-              <div style="text-align: left">
-                <button>💛</button>
-              </div>
-            </li>
-            <li class="subtitle">
-              <div>絶対読むべき！</div>
-              <div>もっと早くこの本に出合いたかったです。</div>
-              <div style="text-align: left">
-                <button>💛</button>
+            <li>雑談を書くところ</li>
+          </ul>
+        </div>
+        <form action="#" method="post" style="text-align: center">
+          <div style="text-align: center">
+            件名: <br />
+            <input type="text" name="content" style="display: inline-block" />
+          </div>
+          <p>
+            入力内容：<br />
+            <textarea name="comment" cols="30" rows="5"></textarea>
+          </p>
+          <button type="submit">投稿</button>
+        </form>
+      </div>
+
+      <div class="tabcontent" id="tabcontent3">
+        <div class="scrollbar">
+          <ul style="list-style: none">
+            <li>イベントを書くところ</li>
+          </ul>
+        </div>
+        <form action="#" method="post" style="text-align: center">
+          <div style="text-align: center">
+            件名: <br />
+            <input type="text" name="content" style="display: inline-block" />
+          </div>
+          <p>
+            入力内容：<br />
+            <textarea name="comment" cols="30" rows="5"></textarea>
+          </p>
+          <button type="submit">投稿</button>
+        </form>
+      </div>
+      <div class="tabcontent" id="tabcontent4">
+        <div class="scrollbar">
+          <ul style="list-style: none">
+            <li
+              v-for="(review, indexReview) in sampleReview"
+              :key="indexReview"
+            >
+              {{ review.name }}
+              <div class="subtitle">
+                <div>{{ review.title }}</div>
+                <div>{{ review.content }}</div>
+                <div style="text-align: left">
+                  <button>💛</button>
+                </div>
               </div>
             </li>
           </ul>
@@ -412,7 +167,19 @@
   </div>
 </template>
 
-<script></script>
+<script>
+import sampleReview from "../data/sampleReview";
+import sampleQuestion from "../data/sampleQuestion";
+
+export default {
+  data() {
+    return {
+      sampleReview,
+      sampleQuestion,
+    };
+  },
+};
+</script>
 
 <style type="text/css">
 /* ▼タブ機能の掲載領域の装飾(※必須ではありません) */
@@ -420,6 +187,7 @@
   margin: 0px;
   padding: 1em;
   background-color: #f8f8ff;
+  text-align: left;
 }
 
 /* ▼タブ機能を制御するラジオボタン(非表示にする) */
@@ -477,7 +245,9 @@ input:checked + .tab {
 #tabcheck3:checked ~ #tabcontent3 {
   display: block;
 }
-
+#tabcheck4:checked ~ #tabcontent4 {
+  display: block;
+}
 .subtitle {
   border-style: solid;
   border-width: 1px 1px 1px 1px;
