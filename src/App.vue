@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <Book />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Book from "./components/Book.vue";
+//import Book from "./components/Book.vue";
 
 export default {
   name: "App",
   components: {
-    Book,
+    //Book,
   },
 };
 </script>
