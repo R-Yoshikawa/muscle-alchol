@@ -3,6 +3,7 @@ const sampleQuestion = [
     name: "yata",
     title: "p.20について",
     content: "～～～の意味が分かりません。XXXということでしょうか？",
+    tag: ["tag.A", "tag.B"],
     reply: [
       {
         name: "yata",
@@ -22,6 +23,7 @@ const sampleQuestion = [
     name: "yata123",
     title: "p.20について",
     content: "～～～の意味が分かりません。XXXということでしょうか？",
+    tag: ["tag.C", "tag.B"],
     reply: [
       {
         name: "yata456",

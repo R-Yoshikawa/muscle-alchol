@@ -31,21 +31,23 @@
             >
               <div class="subtitle">
                 <div>{{ thread.name }}</div>
-                <div>{{ thread.title }}</div>
-                <div>{{ thread.content }}</div>
-                <table>
-                  <tr>
-                    <td><button>↵</button></td>
-                    <td><button>💛</button></td>
-                  </tr>
-                </table>
 
                 <div
                   onclick="obj=document.getElementById('menu1').style; obj.display=(obj.display=='none')?'block':'none';"
                 >
-                  <a style="cursor: pointer">▼ 返信を見る</a>
+                  <a style="cursor: pointer; font-weight: bold"
+                    >{{ thread.title }}
+                  </a>
                 </div>
-                <!--// 折りたたみ展開ボタン -->
+                <table>
+                  <tr>
+                    <td v-for="(tag, indexTag) in thread.tag" :key="indexTag">
+                      {{ tag }}
+                    </td>
+                  </tr>
+                </table>
+                <div>{{ thread.content }}</div>
+                <button>💛</button>
 
                 <!-- ここから先を折りたたむ -->
                 <div id="menu1" style="display: none; clear: both">
@@ -60,11 +62,12 @@
                         <div>
                           {{ reply.content }}
                         </div>
-
                         <table>
                           <tr>
-                            <td><button>↵</button></td>
                             <td><button>💛</button></td>
+                            <td v-if="indexReply == thread.reply.length - 1">
+                              <button>↵</button>
+                            </td>
                           </tr>
                         </table>
                       </div>
