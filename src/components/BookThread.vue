@@ -22,12 +22,12 @@
         >レビュー</label
       >
 
-      <div class="tabcontent" id="tabcontent1">
+      <div class="tabcontent" id="tabcontent1" style="height: 700px">
         <div style="text-align: center">
           検索:<input
             type="text"
             name="content"
-            style="display: inline-block"
+            style="display: inline-block; border: solid"
           />
         </div>
         <div class="scrollbar">
@@ -89,17 +89,46 @@
             </li>
           </ul>
         </div>
-        <form action="#" method="post" style="text-align: center">
-          <div style="text-align: center">
-            件名:
-            <input type="text" name="content" style="display: inline-block" />
-          </div>
-          <p>
-            入力内容<br />
-            <textarea name="comment" cols="30" rows="5"></textarea>
-          </p>
-          <button type="submit">投稿</button>
-        </form>
+        <v-app style="text-align: center; height: 300px">
+          <v-form action="#" method="post" style="text-align: center">
+            <v-container>
+              <v-row> 件名 </v-row>
+              <v-row>
+                <v-col cols="12" md="4">
+                  <v-text-field
+                    name="title"
+                    v-model="title"
+                    label="Title"
+                    required
+                  ></v-text-field>
+                </v-col>
+              </v-row>
+              <v-row> 入力内容<br /> </v-row>
+              <v-row>
+                <v-text-field
+                  name="content"
+                  cols="30"
+                  rows="5"
+                  v-model="content"
+                  label="Content"
+                  required
+                ></v-text-field>
+              </v-row>
+
+              <v-row>
+                <v-col cols="6">
+                  <v-combobox
+                    v-model="select"
+                    :items="items"
+                    label="Select a favorite activity or create a new one"
+                    multiple
+                  ></v-combobox>
+                </v-col>
+              </v-row>
+            </v-container>
+            <v-btn type="submit">投稿</v-btn>
+          </v-form>
+        </v-app>
       </div>
 
       <div class="tabcontent" id="tabcontent2">
@@ -107,7 +136,7 @@
           検索:<input
             type="text"
             name="content"
-            style="display: inline-block"
+            style="display: inline-block; border: solid"
           />
         </div>
         <div class="scrollbar">
@@ -204,6 +233,10 @@ export default {
     return {
       sampleReview,
       sampleQuestion,
+      select: ["Vuetify", "Programming"],
+      items: ["Programming", "Design", "Vue", "Vuetify"],
+      title: "title",
+      content: "hoge",
     };
   },
 };
