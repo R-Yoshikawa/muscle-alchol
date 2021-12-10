@@ -161,7 +161,9 @@
             <li v-for="(event, indexEvent) in sampleEvent" :key="indexEvent">
               {{ event.name }}
               <div class="subtitle">
-                <div>{{ event.title }}</div>
+                <router-link to="#">
+                  <div>{{ event.title }}</div>
+                </router-link>
                 <div>{{ event.content }}</div>
                 <div style="text-align: left">
                   <button>💛</button>
