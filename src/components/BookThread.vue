@@ -23,222 +23,36 @@
       >
 
       <div class="tabcontent" id="tabcontent1">
-        <div style="text-align: center">
-          検索:<input
-            type="text"
-            name="content"
-            style="display: inline-block"
-          />
-        </div>
-        <div class="scrollbar">
-          <ul style="list-style: none">
-            <li
-              v-for="(thread, indexThread) in sampleQuestion"
-              :key="indexThread"
-            >
-              <div class="subtitle">
-                <router-link to="/Mypage">
-                  <div>{{ thread.name }}</div>
-                </router-link>
-
-                <div
-                  onclick="obj=document.getElementById('menu1').style; obj.display=(obj.display=='none')?'block':'none';"
-                >
-                  <a style="cursor: pointer; font-weight: bold"
-                    >{{ thread.title }}
-                  </a>
-                </div>
-                <table>
-                  <tr>
-                    <td v-for="(tag, indexTag) in thread.tag" :key="indexTag">
-                      {{ tag }}
-                    </td>
-                  </tr>
-                </table>
-                <div>{{ thread.content }}</div>
-                <button>💛</button>
-
-                <!-- ここから先を折りたたむ -->
-                <div id="menu1" style="display: none; clear: both">
-                  <!--この部分が折りたたまれ、展開ボタンをクリックすることで展開します。-->
-                  <ul style="list-style: none">
-                    <li
-                      v-for="(reply, indexReply) in thread.reply"
-                      :key="indexReply"
-                    >
-                      {{ reply.name }}
-                      <div class="subtitle">
-                        <div>
-                          {{ reply.content }}
-                        </div>
-                        <table>
-                          <tr>
-                            <td><button>💛</button></td>
-                            <td v-if="indexReply == thread.reply.length - 1">
-                              <button>↵</button>
-                            </td>
-                          </tr>
-                        </table>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-
-                <!--// ここまでを折りたたむ -->
-              </div>
-            </li>
-          </ul>
-        </div>
-        <form action="#" method="post" style="text-align: center">
-          <div style="text-align: center">
-            件名:
-            <input type="text" name="content" style="display: inline-block" />
-          </div>
-          <p>
-            入力内容<br />
-            <textarea name="comment" cols="30" rows="5"></textarea>
-          </p>
-          <p>
-            <select name="example">
-              <option value="選択肢1">Python</option>
-              <option value="選択肢2">C++</option>
-              <option value="選択肢3">Vue</option>
-            </select>
-            <br />
-          </p>
-          <button type="submit">投稿</button>
-        </form>
+        <BookThreadQuestion />
       </div>
-
       <div class="tabcontent" id="tabcontent2">
-        <div style="text-align: center">
-          検索:<input
-            type="text"
-            name="content"
-            style="display: inline-block"
-          />
-        </div>
-        <div class="scrollbar">
-          <ul style="list-style: none">
-            <li
-              v-for="(zatsudan, indexZatsudan) in sampleZatsudan"
-              :key="indexZatsudan"
-            >
-              {{ zatsudan.name }}
-              <div class="subtitle">
-                <div>{{ zatsudan.title }}</div>
-                <div>{{ zatsudan.content }}</div>
-                <div style="text-align: left">
-                  <button>💛</button>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <form action="#" method="post" style="text-align: center">
-          <div style="text-align: center">
-            件名:
-            <input type="text" name="content" style="display: inline-block" />
-          </div>
-          <p>
-            入力内容<br />
-            <textarea name="comment" cols="30" rows="5"></textarea>
-          </p>
-          <button type="submit">投稿</button>
-        </form>
+        <BookThreadZatsudan />
       </div>
 
       <div class="tabcontent" id="tabcontent3">
-        <div style="text-align: center">
-          検索:<input
-            type="text"
-            name="content"
-            style="display: inline-block"
-          />
-        </div>
-        <div class="scrollbar">
-          <ul style="list-style: none">
-            <li v-for="(event, indexEvent) in sampleEvent" :key="indexEvent">
-              {{ event.name }}
-              <div class="subtitle">
-                <div>{{ event.title }}</div>
-                <div>{{ event.content }}</div>
-                <div style="text-align: left">
-                  <button>💛</button>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <form action="#" method="post" style="text-align: center">
-          <div style="text-align: center">
-            件名:
-            <input type="text" name="content" style="display: inline-block" />
-          </div>
-          <p>
-            入力内容<br />
-            <textarea name="comment" cols="30" rows="5"></textarea>
-          </p>
-          <button type="submit">投稿</button>
-        </form>
+        <BookThreadEvent />
       </div>
       <div class="tabcontent" id="tabcontent4">
-        <div style="text-align: center">
-          検索:<input
-            type="text"
-            name="content"
-            style="display: inline-block"
-          />
-        </div>
-        <div class="scrollbar">
-          <ul style="list-style: none">
-            <li
-              v-for="(review, indexReview) in sampleReview"
-              :key="indexReview"
-            >
-              {{ review.name }}
-              <div class="subtitle">
-                <div>{{ review.title }}</div>
-                <div>{{ review.content }}</div>
-                <div style="text-align: left">
-                  <button>💛</button>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <form action="#" method="post" style="text-align: center">
-          <div style="text-align: center">
-            件名:
-            <input type="text" name="content" style="display: inline-block" />
-          </div>
-          <p>
-            入力内容<br />
-            <textarea name="comment" cols="30" rows="5"></textarea>
-          </p>
-
-          <button type="submit">投稿</button>
-        </form>
+        <BookThreadReview />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import sampleReview from "../data/sampleReview";
-import sampleQuestion from "../data/sampleQuestion";
-import sampleEvent from "../data/sampleEvent";
-import sampleZatsudan from "../data/sampleZatsudan";
-
+import BookThreadEvent from "./BookThreadEvent.vue";
+import BookThreadQuestion from "./BookThreadQuestion.vue";
+import BookThreadZatsudan from "./BookThreadZatsudan.vue";
+import BookThreadReview from "./BookThreadReview.vue";
 export default {
   data() {
-    return {
-      sampleReview,
-      sampleQuestion,
-      sampleEvent,
-      sampleZatsudan,
-    };
+    return {};
+  },
+  components: {
+    BookThreadEvent,
+    BookThreadQuestion,
+    BookThreadZatsudan,
+    BookThreadReview,
   },
 };
 </script>

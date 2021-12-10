@@ -84,7 +84,7 @@ export default {
 
 .bookDescription {
   display: flex;
-  justify-content: start;
+  justify-content: flex;
 }
 .bookDetail {
   width: 700px;
@@ -171,7 +171,7 @@ export default {
   display: none;
 }
 .grad-trigger:checked ~ .grad-btn {
-  bottom: -2.5em;
+  bottom: -3em;
 }
 .grad-trigger:checked ~ .grad-btn::after {
   content: "閉じる";
