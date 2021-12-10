@@ -98,6 +98,14 @@
             入力内容<br />
             <textarea name="comment" cols="30" rows="5"></textarea>
           </p>
+          <p>
+            <select name="example">
+              <option value="選択肢1">Python</option>
+              <option value="選択肢2">C++</option>
+              <option value="選択肢3">Vue</option>
+            </select>
+            <br />
+          </p>
           <button type="submit">投稿</button>
         </form>
       </div>
@@ -112,7 +120,19 @@
         </div>
         <div class="scrollbar">
           <ul style="list-style: none">
-            <li>雑談を書くところ</li>
+            <li
+              v-for="(zatsudan, indexZatsudan) in sampleZatsudan"
+              :key="indexZatsudan"
+            >
+              {{ zatsudan.name }}
+              <div class="subtitle">
+                <div>{{ zatsudan.title }}</div>
+                <div>{{ zatsudan.content }}</div>
+                <div style="text-align: left">
+                  <button>💛</button>
+                </div>
+              </div>
+            </li>
           </ul>
         </div>
         <form action="#" method="post" style="text-align: center">
@@ -138,7 +158,16 @@
         </div>
         <div class="scrollbar">
           <ul style="list-style: none">
-            <li>イベントを書くところ</li>
+            <li v-for="(event, indexEvent) in sampleEvent" :key="indexEvent">
+              {{ event.name }}
+              <div class="subtitle">
+                <div>{{ event.title }}</div>
+                <div>{{ event.content }}</div>
+                <div style="text-align: left">
+                  <button>💛</button>
+                </div>
+              </div>
+            </li>
           </ul>
         </div>
         <form action="#" method="post" style="text-align: center">
@@ -188,6 +217,7 @@
             入力内容<br />
             <textarea name="comment" cols="30" rows="5"></textarea>
           </p>
+
           <button type="submit">投稿</button>
         </form>
       </div>
@@ -198,12 +228,16 @@
 <script>
 import sampleReview from "../data/sampleReview";
 import sampleQuestion from "../data/sampleQuestion";
+import sampleEvent from "../data/sampleEvent";
+import sampleZatsudan from "../data/sampleZatsudan";
 
 export default {
   data() {
     return {
       sampleReview,
       sampleQuestion,
+      sampleEvent,
+      sampleZatsudan,
     };
   },
 };
