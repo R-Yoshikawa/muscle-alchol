@@ -82,17 +82,6 @@
             </li>
           </ul>
         </div>
-        <form action="#" method="post" style="text-align: center">
-          <div style="text-align: center">
-            件名: <br />
-            <input type="text" name="content" style="display: inline-block" />
-          </div>
-          <p>
-            入力内容：<br />
-            <textarea name="comment" cols="30" rows="5"></textarea>
-          </p>
-          <button type="submit">投稿</button>
-        </form>
       </div>
 
       <div class="tabcontent" id="tabcontent2">
@@ -101,17 +90,6 @@
             <li>雑談を書くところ</li>
           </ul>
         </div>
-        <form action="#" method="post" style="text-align: center">
-          <div style="text-align: center">
-            件名: <br />
-            <input type="text" name="content" style="display: inline-block" />
-          </div>
-          <p>
-            入力内容：<br />
-            <textarea name="comment" cols="30" rows="5"></textarea>
-          </p>
-          <button type="submit">投稿</button>
-        </form>
       </div>
 
       <div class="tabcontent" id="tabcontent3">
@@ -120,17 +98,6 @@
             <li>イベントを書くところ</li>
           </ul>
         </div>
-        <form action="#" method="post" style="text-align: center">
-          <div style="text-align: center">
-            件名: <br />
-            <input type="text" name="content" style="display: inline-block" />
-          </div>
-          <p>
-            入力内容：<br />
-            <textarea name="comment" cols="30" rows="5"></textarea>
-          </p>
-          <button type="submit">投稿</button>
-        </form>
       </div>
       <div class="tabcontent" id="tabcontent4">
         <div class="scrollbar">
@@ -150,18 +117,6 @@
             </li>
           </ul>
         </div>
-
-        <form action="#" method="post" style="text-align: center">
-          <div style="text-align: center">
-            件名: <br />
-            <input type="text" name="content" style="display: inline-block" />
-          </div>
-          <p>
-            入力内容：<br />
-            <textarea name="comment" cols="30" rows="5"></textarea>
-          </p>
-          <button type="submit">投稿</button>
-        </form>
       </div>
     </div>
   </div>

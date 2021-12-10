@@ -18,7 +18,7 @@
           <b>{{ userDetail.user_name }}</b> ({{ userDetail.user_id }})
         </p>
         <p>{{ userDetail.user_BU }}</p>
-        <div>
+        <div class="skill">
           <ul v-for="history of user_history" v-bind:key="history.history">
             <p>{{ history }}</p>
           </ul>
@@ -93,8 +93,12 @@ export default {
   background-color: #f5f5f5;
 }
 
+.skill {
+  text-align: left;
+}
+
 .userDetail {
-  width: 300px;
+  width: 500px;
   color: rgb(87, 86, 86);
   text-align: left;
   text-indent: -3.2em;
@@ -111,6 +115,7 @@ export default {
   border-radius: 50%;
   border: 2px solid gray;
 }
+
 .bookimg {
   width: 250px;
   background: url(../../public/bookimg.png) no-repeat;
