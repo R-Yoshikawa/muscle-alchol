@@ -15,7 +15,7 @@ const sampleEvent = [
 
                     当日の参加も大歓迎です...！
                     
-                    ZoomURL（<a href>https://aaa.zoom/123456789012</a>）
+                    ZoomURL（https://aaa.zoom/123456789012）
                     ※私用端末を使って参加される場合は、ゲストアカウントでお入りください。`,
     type: "勉強会",
     executionStyle: "Zoom",

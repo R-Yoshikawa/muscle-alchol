@@ -1,5 +1,5 @@
 <template>
-  <div class="EventBooklist">
+  <div class="EventBooklistLayout">
     <div class="obj">
       <div class="title1">
         <p><b>このイベントに関連する本</b></p>
@@ -37,7 +37,8 @@ export default {
 </script>
 
 <style>
-.EventBooklist {
+.EventBooklistLayout {
+  padding: 1em 1em 1em 3em;
   border: solid 3px #3dbfb8;
 }
 

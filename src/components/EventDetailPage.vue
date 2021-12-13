@@ -28,5 +28,11 @@ export default {
 
 .EventParticipant {
   margin: 5px;
+  padding-left: 100px;
+}
+
+.EventBooklist {
+  margin: 5px;
+  padding-left: 100px;
 }
 </style>
