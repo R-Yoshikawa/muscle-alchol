@@ -1,16 +1,30 @@
 <template>
   <div class="eventDetail">
     <h1>{{ eventDetail.title }}</h1>
-    <p>{{ eventDetail.tag }}</p>
-    <p>{{ eventDetail.description }}</p>
-    <p>
-      <b>開催日：</b>{{ eventDetail.date }} {{ eventDetail.startTime }}~{{
-        eventDetail.endTime
-      }}
-    </p>
-    <p><b>タイムテーブル：</b>{{ eventDetail.timeTable }}</p>
-    <p><b>イベント種別：</b>{{ eventDetail.type }}</p>
-    <p><b>開催形態：</b>{{ eventDetail.executionStyle }}</p>
+
+    <div class="main">
+      <div></div>
+      <p>{{ eventDetail.summary }}</p>
+      <br />
+      <p>
+        <b>開催日：</b>{{ eventDetail.date }} {{ eventDetail.startTime }}~{{
+          eventDetail.endTime
+        }}
+      </p>
+      <p><b>イベント種別：</b>{{ eventDetail.type }}</p>
+      <div class="detail">
+        <p><b>イベント詳細：</b>{{ eventDetail.description }}</p>
+      </div>
+      <b>タグ：</b>
+      <p
+        v-for="tag of eventDetail.tag"
+        v-bind:key="tag.tag"
+        style="display: inline-block"
+      >
+        <mark background-color:yellow>{{ tag }}</mark
+        >&ensp;&ensp;&ensp;&ensp;
+      </p>
+    </div>
   </div>
 </template>
 
@@ -24,8 +38,21 @@ export default {
 </script>
 
 <style>
+.main {
+  padding-left: 50px;
+}
+
 .eventDetail {
   text-align: left;
-  margin: auto;
+  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 100px;
+  white-space: pre-line;
+}
+
+.detail {
+  padding-left: 110px;
+  text-indent: -110px;
 }
 </style>
