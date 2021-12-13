@@ -28,6 +28,7 @@
           type="text"
           name="title"
           style="display: inline-block"
+          size="40"
           placeholder="件名を入力してください"
         />
 
@@ -37,7 +38,7 @@
             type="text"
             ref="content"
             name="content"
-            cols="30"
+            cols="42"
             rows="5"
             placeholder="内容を入力してください"
           ></textarea>

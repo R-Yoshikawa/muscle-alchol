@@ -11,9 +11,16 @@
           </router-link>
 
           <div class="subtitle">
-            <router-link to="EventDetail">
-              <div>{{ event.title }}</div>
-            </router-link>
+            <nobr>
+              <router-link to="EventDetail">
+                {{ event.title }}
+              </router-link>
+            </nobr>
+
+            <nobr style="margin-left: 50px">
+              {{ event.date }} {{ event.startTime }}～{{ event.endTime }}</nobr
+            >
+
             <table>
               <tr>
                 <td
@@ -26,6 +33,7 @@
               </tr>
             </table>
             <div>{{ event.description }}</div>
+
             <div style="text-align: left">
               <button>💛</button>
             </div>
@@ -41,6 +49,7 @@
           type="text"
           name="title"
           style="display: inline-block"
+          size="40"
           placeholder="イベント名を入力してください"
         />
         <p>
@@ -49,11 +58,20 @@
             ref="desc"
             type="text"
             name="content"
-            cols="30"
+            cols="42"
             rows="5"
             placeholder="イベント内容を入力してください"
           ></textarea>
         </p>
+        <input
+          v-bind="executionStyle"
+          ref="executionStyle"
+          type="text"
+          name="executionStyle"
+          placeholder="開催形態を入力してください (例)オンライン, オフライン"
+          style="display: inline-block"
+          size="40"
+        />
         <p>
           開催日時:
           <input
@@ -72,23 +90,17 @@
             style="display: inline-block"
           />
         </p>
+
         <p>
-          <select name="type" v-bind="type" ref="type">
+          <select name="type" v-bind="type" ref="type" style="width: 23em">
             <option value="" hidden>イベント種別を選択してください</option>
             <option value="勉強会">勉強会</option>
             <option value="討論会">討論会</option>
           </select>
         </p>
-        <input
-          v-bind="executionStyle"
-          ref="executionStyle"
-          type="text"
-          name="executionStyle"
-          placeholder="開催形態を入力してください (例)オンライン, オフライン"
-          style="display: inline-block"
-        />
+
         <p>
-          <select name="tag" v-bind="tag" ref="tag">
+          <select name="tag" v-bind="tag" ref="tag" style="width: 23em">
             <option value="" hidden>タグを選択してください</option>
             <option value="スクラム開発">スクラム開発</option>
             <option value="ウォーターフォール開発">
@@ -129,16 +141,17 @@ export default {
       const addObject = {
         name: this.name,
         title: this.$refs.title.value,
-        date: this.$refs.startDate.value.substr(0, 9).replace(/-/g, "/"),
+        date: this.$refs.startDate.value.substr(0, 10).replace(/-/g, "/"),
 
         startTime: this.$refs.startDate.value.substr(11),
         endTime: this.$refs.endDate.value.substr(11),
 
         description: this.$refs.desc.value,
         //    timeTable: this.$refs.timeTable.value,
-        type: this.$refs.type.value,
+        type: this.$refs.type.value === "" ? null : [this.$refs.type.value],
         executionStyle: this.$refs.executionStyle.value,
-        tag: [this.$refs.tag.value],
+        tag: this.$refs.tag.value === "" ? null : [this.$refs.tag.value],
+
         relatedBook: "これ",
       };
       sampleEvent.push(addObject);

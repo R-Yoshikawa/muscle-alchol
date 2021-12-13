@@ -70,6 +70,7 @@
           type="text"
           name="title"
           style="display: inline-block"
+          size="40"
           placeholder="件名を入力してください"
         />
 
@@ -79,13 +80,13 @@
             type="text"
             ref="content"
             name="content"
-            cols="30"
+            cols="42"
             rows="5"
             placeholder="質問内容を入力してください"
           ></textarea>
         </p>
         <p>
-          <select name="example" v-bind="tag" ref="tag">
+          <select name="example" v-bind="tag" ref="tag" style="width: 23em">
             <option value="" hidden>タグを選択してください</option>
             <option value="Python">Python</option>
             <option value="C++">C++</option>
@@ -121,7 +122,7 @@ export default {
         name: this.name,
         title: this.$refs.title.value,
         content: this.$refs.content.value,
-        tag: [this.$refs.tag.value],
+        tag: this.$refs.tag.value === "" ? null : [this.$refs.tag.value],
       };
       sampleQuestion.push(addObject);
     },

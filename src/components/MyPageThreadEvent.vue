@@ -8,8 +8,27 @@
         <li v-for="(event, indexEvent) in takeYata" :key="indexEvent">
           {{ event.name }}
           <div class="subtitle">
-            <div>{{ event.title }}</div>
-            <div>{{ event.content }}</div>
+            <nobr>
+              <router-link to="EventDetail">
+                {{ event.title }}
+              </router-link>
+            </nobr>
+
+            <nobr style="margin-left: 50px">
+              {{ event.date }} {{ event.startTime }}～{{ event.endTime }}</nobr
+            >
+            <table>
+              <tr>
+                <td
+                  v-for="(tag, indexTag) in event.tag"
+                  :key="indexTag"
+                  class="tagStyle"
+                >
+                  {{ tag }}
+                </td>
+              </tr>
+            </table>
+            <div>{{ event.description }}</div>
             <div style="text-align: left">
               <button>💛</button>
             </div>
