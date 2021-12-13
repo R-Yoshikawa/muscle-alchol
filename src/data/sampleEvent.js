@@ -2,7 +2,7 @@ const sampleEvent = [
   {
     name: "yata",
     title: "スクラム開発アンチパターン勉強会",
-    date: "2021/12/14(火)",
+    date: "2021/12/14",
     startTime: "18:00",
     endTime: "20:00",
     summary:
