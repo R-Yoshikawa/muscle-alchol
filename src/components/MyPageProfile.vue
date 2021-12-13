@@ -27,13 +27,40 @@
       <div class="skill">
         <p><b>スキル</b></p>
         <ul v-for="skill of user_skills" v-bind:key="skill.skill">
-          <p>{{ skill }}</p>
+          <p class="tagStyle">{{ skill }}</p>
         </ul>
       </div>
     </div>
-    <div class="bookList">
+    <div class="ReadBooklistLayout">
+      <ul style="display: flex">
+        <li style="display: inline">
+          <div class="title1">
+            <p><b>読んだ本</b></p>
+          </div>
+        </li>
+        <li style="display: inline">
+          <a href="#" class="btn-gradient-radius">+追加</a>
+        </li>
+      </ul>
+      <ul class="bookList">
+        <li v-for="image in images" :key="image.index">
+          <div class="iconbook"><img :src="image.src" alt="" /></div>
+          <p>{{ image.name }}</p>
+        </li>
+      </ul>
+    </div>
+    <!-- <div class="bookList">
       <div style="text-align: center">
-        <p><b>読んだ本リスト</b></p>
+        <ul style="display: flex">
+          <li style="display: inline">
+            <div class="title1">
+              <p><b>参加者一覧</b></p>
+            </div>
+          </li>
+          <li style="display: inline">
+            <a href="#" class="btn-gradient-radius">+参加</a>
+          </li>
+        </ul>
         <div class="bookListLayout">
           <div class="bookimg">
             <a href="#"></a>
@@ -41,12 +68,9 @@
           <div class="bookimg2">
             <a href="#"></a>
           </div>
-          <div style="text-align: right">
-            <button>追加</button>
-          </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -68,12 +92,22 @@ export default {
         "2020/03 AWS構築案件",
       ],
       user_skills: ["Java", "AWS", "スクラム"],
+      images: [
+        {
+          index: 1,
+          src: "bookimg.png",
+        },
+        {
+          index: 2,
+          src: "bookimg2.png",
+        },
+      ],
     };
   },
 };
 </script>
 
-<style>
+<style scoped>
 .main {
   margin: auto;
 }
@@ -230,5 +264,39 @@ export default {
   position: relative;
   right: 3em;
   padding-bottom: 3em;
+}
+
+.tagStyle {
+  background-color: rgb(254, 219, 255);
+  max-width: 180px;
+  text-align: left;
+  background-color: #9ec34b;
+  font-size: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 4px 8px;
+  margin: 4px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.btn-gradient-radius {
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #fff;
+  background-image: linear-gradient(45deg, #078fff 0%, #5f6aff 100%);
+  transition: 0.4s;
+}
+
+.btn-gradient-radius:hover {
+  background-image: linear-gradient(45deg, #078fff 0%, #5f6aff 100%);
+}
+
+.ReadBooklistLayout {
+  padding: 1em 1em 1em 3em;
+  /* border: solid 3px #3dbfb8; */
 }
 </style>

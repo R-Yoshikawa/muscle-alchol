@@ -20,9 +20,11 @@
         v-for="tag of eventDetail.tag"
         v-bind:key="tag.tag"
         style="display: inline-block"
+        class="tagStyle"
       >
-        <mark background-color:yellow>{{ tag }}</mark
-        >&ensp;&ensp;&ensp;&ensp;
+        <!-- <mark background-color:yellow>{{ tag }}</mark
+        >&ensp;&ensp;&ensp;&ensp; -->
+        {{ tag }}
       </p>
     </div>
   </div>
@@ -54,5 +56,20 @@ export default {
 .detail {
   padding-left: 110px;
   text-indent: -110px;
+}
+
+.tagStyle {
+  background-color: rgb(254, 219, 255);
+  max-width: 180px;
+  text-align: left;
+  background-color: #9ec34b;
+  font-size: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 4px 8px;
+  margin: 4px;
+  border-radius: 4px;
+  position: relative;
 }
 </style>

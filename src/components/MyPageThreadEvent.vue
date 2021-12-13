@@ -28,7 +28,7 @@
                 </td>
               </tr>
             </table>
-            <div>{{ event.description }}</div>
+            <div>{{ event.summary }}</div>
             <div style="text-align: left">
               <button>💛</button>
             </div>

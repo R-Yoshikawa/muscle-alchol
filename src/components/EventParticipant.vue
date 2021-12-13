@@ -1,13 +1,15 @@
 <template>
   <div class="EventPartcipant1">
-    <div class="obj1">
-      <div class="title1">
-        <p><b>参加者一覧</b></p>
-      </div>
-      <div>
-        <a href="#" class="btn-gradient-radius">+参加者</a>
-      </div>
-    </div>
+    <ul style="display: flex">
+      <li style="display: inline">
+        <div class="title1">
+          <p><b>参加者一覧</b></p>
+        </div>
+      </li>
+      <li style="display: inline">
+        <a href="#" class="btn-gradient-radius">+参加</a>
+      </li>
+    </ul>
     <ul class="participantList">
       <li v-for="image in images" :key="image.index">
         <div class="icon"><img :src="image.src" alt="" /></div>
@@ -57,16 +59,12 @@ export default {
   border: solid 3px #3dbfb8;
 }
 
-.obj {
-  display: inline-block;
-  text-align: left;
-}
-
 .title1 {
   text-align: left;
   font-weight: bold;
   text-decoration: underline;
   font-size: 150%;
+  margin-right: 15px;
 }
 
 .btn-gradient-radius {
@@ -77,6 +75,7 @@ export default {
   color: #fff;
   background-image: linear-gradient(45deg, #078fff 0%, #5f6aff 100%);
   transition: 0.4s;
+  margin-top: 20px;
 }
 
 .btn-gradient-radius:hover {
