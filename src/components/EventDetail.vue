@@ -1,17 +1,9 @@
 <template>
   <div class="eventDetail">
     <h1>{{ eventDetail.title }}</h1>
+
     <div class="main">
-      <div>
-        <p
-          v-for="tag of eventDetail.tag"
-          v-bind:key="tag.tag"
-          style="display: inline-block"
-        >
-          <mark background-color:yellow>{{ tag }}</mark
-          >&ensp;&ensp;&ensp;&ensp;
-        </p>
-      </div>
+      <div></div>
       <p>{{ eventDetail.summary }}</p>
       <br />
       <p>
@@ -23,6 +15,15 @@
       <div class="detail">
         <p><b>イベント詳細：</b>{{ eventDetail.description }}</p>
       </div>
+      <b>タグ：</b>
+      <p
+        v-for="tag of eventDetail.tag"
+        v-bind:key="tag.tag"
+        style="display: inline-block"
+      >
+        <mark background-color:yellow>{{ tag }}</mark
+        >&ensp;&ensp;&ensp;&ensp;
+      </p>
     </div>
   </div>
 </template>
@@ -53,9 +54,5 @@ export default {
 .detail {
   padding-left: 110px;
   text-indent: -110px;
-}
-
-.tag {
-  background-color: yellow;
 }
 </style>
