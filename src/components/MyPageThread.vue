@@ -57,3 +57,20 @@ export default {
   },
 };
 </script>
+
+<style>
+.tagStyle {
+  background-color: rgb(254, 219, 255);
+  max-width: 180px;
+  text-align: left;
+  background-color: #9ec34b;
+  font-size: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 4px 8px;
+  margin: 4px;
+  border-radius: 4px;
+  position: relative;
+}
+</style>

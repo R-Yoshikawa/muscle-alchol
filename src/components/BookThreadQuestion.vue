@@ -6,11 +6,10 @@
     <div class="scrollbar">
       <ul style="list-style: none">
         <li v-for="(thread, indexThread) in sampleQuestion" :key="indexThread">
+          <router-link to="/Mypage">
+            <div>{{ thread.name }}</div>
+          </router-link>
           <div class="subtitle">
-            <router-link to="/Mypage">
-              <div>{{ thread.name }}</div>
-            </router-link>
-
             <div
               onclick="obj=document.getElementById('menu1').style; obj.display=(obj.display=='none')?'block':'none';"
             >
@@ -20,7 +19,11 @@
             </div>
             <table>
               <tr>
-                <td v-for="(tag, indexTag) in thread.tag" :key="indexTag">
+                <td
+                  v-for="(tag, indexTag) in thread.tag"
+                  :key="indexTag"
+                  class="tagStyle"
+                >
                   {{ tag }}
                 </td>
               </tr>
@@ -59,23 +62,87 @@
         </li>
       </ul>
     </div>
-    <BookForm />
+    <div>
+      <div style="text-align: center">
+        <input
+          v-bind="title"
+          ref="title"
+          type="text"
+          name="title"
+          style="display: inline-block"
+          size="40"
+          placeholder="件名を入力してください"
+        />
+
+        <p>
+          <textarea
+            v-bind="content"
+            type="text"
+            ref="content"
+            name="content"
+            cols="42"
+            rows="5"
+            placeholder="質問内容を入力してください"
+          ></textarea>
+        </p>
+        <p>
+          <select name="example" v-bind="tag" ref="tag" style="width: 23em">
+            <option value="" hidden>タグを選択してください</option>
+            <option value="Python">Python</option>
+            <option value="C++">C++</option>
+            <option value="Vue">Vue</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="画像処理">画像処理</option>
+          </select>
+        </p>
+        <!-- <button type="submit">投稿</button> -->
+        <button v-on:click="mySubmit">投稿</button>
+      </div>
+      <!-- </form> -->
+    </div>
   </div>
 </template>
 
 <script>
 import sampleQuestion from "../data/sampleQuestion";
-import BookForm from "./BookFormQustion.vue";
+
 export default {
-  components: {
-    BookForm,
-  },
   data() {
     return {
       sampleQuestion,
+      tag: [],
+      name: "yata",
+      title: "",
+      content: "",
     };
+  },
+  methods: {
+    mySubmit() {
+      const addObject = {
+        name: this.name,
+        title: this.$refs.title.value,
+        content: this.$refs.content.value,
+        tag: this.$refs.tag.value === "" ? null : [this.$refs.tag.value],
+      };
+      sampleQuestion.push(addObject);
+    },
   },
 };
 </script>
 
-<style></style>
+<style>
+.tagStyle {
+  background-color: rgb(254, 219, 255);
+  max-width: 180px;
+  text-align: left;
+  background-color: #9ec34b;
+  font-size: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 4px 8px;
+  margin: 4px;
+  border-radius: 4px;
+  position: relative;
+}
+</style>

@@ -20,7 +20,11 @@
             </div>
             <table>
               <tr>
-                <td v-for="(tag, indexTag) in thread.tag" :key="indexTag">
+                <td
+                  class="tagStyle"
+                  v-for="(tag, indexTag) in thread.tag"
+                  :key="indexTag"
+                >
                   {{ tag }}
                 </td>
               </tr>

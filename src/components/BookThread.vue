@@ -62,7 +62,6 @@ export default {
 .tabbox {
   margin: 0px;
   padding: 1em;
-  background-color: #f8f8ff;
   text-align: left;
 }
 
@@ -80,7 +79,6 @@ export default {
   border-radius: 0.75em 0.75em 0px 0px;
   padding: 0.75em 1em;
   color: black;
-  background-color: #e0e0e0;
   font-weight: bold;
 }
 
@@ -93,8 +91,8 @@ export default {
 
 /* ▼チェックが入っているラジオボタンの隣にあるタブの装飾(＝選択状態のタブ) */
 input:checked + .tab {
-  color: red;
-  background-color: #ffffcc;
+  color: rgb(99, 166, 230);
+  background-color: #f0f8ff;
   position: relative;
   z-index: 10;
 }
@@ -102,12 +100,12 @@ input:checked + .tab {
 /* ▼タブの中身(共通装飾＋非選択状態の装飾) */
 .tabcontent {
   display: none;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.493);
   margin-top: -1px;
   padding: 1em;
   position: relative;
   z-index: 0;
-  background-color: #ffffcc;
+  background-color: #f0f8ff;
   text-align: left;
 }
 
