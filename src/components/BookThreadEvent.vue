@@ -16,7 +16,11 @@
             </router-link>
             <table>
               <tr>
-                <td v-for="(tag, indexTag) in event.tag" :key="indexTag">
+                <td
+                  v-for="(tag, indexTag) in event.tag"
+                  :key="indexTag"
+                  class="tagStyle"
+                >
                   {{ tag }}
                 </td>
               </tr>
@@ -42,8 +46,8 @@
         <p>
           <textarea
             v-bind="description"
-            type="text"
             ref="desc"
+            type="text"
             name="content"
             cols="30"
             rows="5"
@@ -52,19 +56,27 @@
         </p>
         <p>
           開催日時:
-          <input type="datetime-local" style="display: inline-block" />
+          <input
+            v-bind="startDate"
+            ref="startDate"
+            type="datetime-local"
+            style="display: inline-block"
+          />
         </p>
         <p>
           終了日時:
-          <input type="datetime-local" style="display: inline-block" />
+          <input
+            v-bind="endDate"
+            ref="endDate"
+            type="datetime-local"
+            style="display: inline-block"
+          />
         </p>
         <p>
-          <select name="type">
-            <option value="選択肢0" hidden>
-              イベント種別を選択してください
-            </option>
-            <option value="選択肢1">勉強会</option>
-            <option value="選択肢2">討論会</option>
+          <select name="type" v-bind="type" ref="type">
+            <option value="" hidden>イベント種別を選択してください</option>
+            <option value="勉強会">勉強会</option>
+            <option value="討論会">討論会</option>
           </select>
         </p>
         <input
@@ -76,10 +88,12 @@
           style="display: inline-block"
         />
         <p>
-          <select name="tag">
-            <option value="選択肢0" hidden>タグを選択してください</option>
-            <option value="選択肢1">スクラム開発</option>
-            <option value="選択肢2">ウォーターフォール開発</option>
+          <select name="tag" v-bind="tag" ref="tag">
+            <option value="" hidden>タグを選択してください</option>
+            <option value="スクラム開発">スクラム開発</option>
+            <option value="ウォーターフォール開発">
+              ウォーターフォール開発
+            </option>
           </select>
         </p>
 
@@ -101,28 +115,31 @@ export default {
       name: "yata",
       title: "",
       date: "",
-      startTime: "",
-      endTime: "",
+      startDate: "",
+      endDate: "",
       description: "",
-      timeTable: "",
+      //  timeTable: "",
       type: "",
       executionStyle: "",
-      tag: "",
+      tag: [],
     };
   },
   methods: {
     mySubmit() {
-      let addObject = {
+      const addObject = {
         name: this.name,
         title: this.$refs.title.value,
-        date: this.$refs.date.value,
-        startTime: this.$refs.startTime.value,
-        endTime: this.$refs.endTime.value,
+        date: this.$refs.startDate.value.substr(0, 9).replace(/-/g, "/"),
+
+        startTime: this.$refs.startDate.value.substr(11),
+        endTime: this.$refs.endDate.value.substr(11),
+
         description: this.$refs.desc.value,
-        timeTable: this.$refs.timeTable.value,
+        //    timeTable: this.$refs.timeTable.value,
         type: this.$refs.type.value,
         executionStyle: this.$refs.executionStyle.value,
-        tag: this.$refs.tag.value,
+        tag: [this.$refs.tag.value],
+        relatedBook: "これ",
       };
       sampleEvent.push(addObject);
     },
@@ -130,4 +147,19 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.tagStyle {
+  background-color: rgb(254, 219, 255);
+  max-width: 180px;
+  text-align: left;
+  background-color: #9ec34b;
+  font-size: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 4px 8px;
+  margin: 4px;
+  border-radius: 4px;
+  position: relative;
+}
+</style>

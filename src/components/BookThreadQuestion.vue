@@ -19,7 +19,11 @@
             </div>
             <table>
               <tr>
-                <td v-for="(tag, indexTag) in thread.tag" :key="indexTag">
+                <td
+                  v-for="(tag, indexTag) in thread.tag"
+                  :key="indexTag"
+                  class="tagStyle"
+                >
                   {{ tag }}
                 </td>
               </tr>
@@ -81,11 +85,13 @@
           ></textarea>
         </p>
         <p>
-          <select name="example">
-            <option value="選択肢0" hidden>タグを選択してください</option>
-            <option value="選択肢1">Python</option>
-            <option value="選択肢2">C++</option>
-            <option value="選択肢3">Vue</option>
+          <select name="example" v-bind="tag" ref="tag">
+            <option value="" hidden>タグを選択してください</option>
+            <option value="Python">Python</option>
+            <option value="C++">C++</option>
+            <option value="Vue">Vue</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="画像処理">画像処理</option>
           </select>
         </p>
         <!-- <button type="submit">投稿</button> -->
@@ -103,6 +109,7 @@ export default {
   data() {
     return {
       sampleQuestion,
+      tag: [],
       name: "yata",
       title: "",
       content: "",
@@ -110,10 +117,11 @@ export default {
   },
   methods: {
     mySubmit() {
-      let addObject = {
+      const addObject = {
         name: this.name,
         title: this.$refs.title.value,
         content: this.$refs.content.value,
+        tag: [this.$refs.tag.value],
       };
       sampleQuestion.push(addObject);
     },
@@ -121,4 +129,19 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.tagStyle {
+  background-color: rgb(254, 219, 255);
+  max-width: 180px;
+  text-align: left;
+  background-color: #9ec34b;
+  font-size: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 4px 8px;
+  margin: 4px;
+  border-radius: 4px;
+  position: relative;
+}
+</style>

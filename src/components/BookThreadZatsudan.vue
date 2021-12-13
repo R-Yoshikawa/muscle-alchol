@@ -64,7 +64,7 @@ export default {
   },
   methods: {
     mySubmit() {
-      let addObject = {
+      const addObject = {
         name: this.name,
         title: this.$refs.title.value,
         content: this.$refs.content.value,
