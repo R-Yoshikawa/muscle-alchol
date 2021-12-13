@@ -1,8 +1,8 @@
 <template>
   <div class="mainEventDetailPage">
-    <EventDetail />
-    <EventParticipant />
-    <EventBooklist />
+    <div class="EventDetail"><EventDetail /></div>
+    <div class="EventParticipant"><EventParticipant /></div>
+    <div class="EventBooklist"><EventBooklist /></div>
   </div>
 </template>
 
@@ -24,5 +24,9 @@ export default {
   width: 80%;
   margin: 0 auto;
   max-width: 5000px;
+}
+
+.EventParticipant {
+  margin: 5px;
 }
 </style>

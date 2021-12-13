@@ -2,8 +2,8 @@ import Vue from "vue";
 import Router from "vue-router";
 import Book from "./components/Book.vue";
 import MyPage from "./components/MyPage.vue";
-import EventDetail from "./components/EventDetail.vue";
-
+import EventDetail from "./components/EventDetailPage.vue";
+import EventBooklist from "./components/EventBooklist.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -12,5 +12,6 @@ export default new Router({
     { path: "/", name: "Book", component: Book },
     { path: "/mypage", name: "MyPage", component: MyPage },
     { path: "/eventdetail", name: "EventDetail", component: EventDetail },
+    { path: "/eventbooklist", name: "EventBooklist", component: EventBooklist },
   ],
 });
