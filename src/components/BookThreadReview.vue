@@ -20,17 +20,16 @@
 
     <div>
       <div style="text-align: center">
-        件名:
         <input
           v-bind="title"
           ref="title"
           type="text"
           name="title"
           style="display: inline-block"
+          placeholder="件名を入力してください"
         />
 
         <p>
-          入力内容<br />
           <textarea
             v-bind="content"
             type="text"
@@ -38,6 +37,7 @@
             name="content"
             cols="30"
             rows="5"
+            placeholder="レビュー内容を入力してください"
           ></textarea>
         </p>
         <!-- <button type="submit">投稿</button> -->

@@ -6,11 +6,10 @@
     <div class="scrollbar">
       <ul style="list-style: none">
         <li v-for="(thread, indexThread) in sampleQuestion" :key="indexThread">
+          <router-link to="/Mypage">
+            <div>{{ thread.name }}</div>
+          </router-link>
           <div class="subtitle">
-            <router-link to="/Mypage">
-              <div>{{ thread.name }}</div>
-            </router-link>
-
             <div
               onclick="obj=document.getElementById('menu1').style; obj.display=(obj.display=='none')?'block':'none';"
             >
@@ -61,17 +60,16 @@
     </div>
     <div>
       <div style="text-align: center">
-        件名:
         <input
           v-bind="title"
           ref="title"
           type="text"
           name="title"
           style="display: inline-block"
+          placeholder="件名を入力してください"
         />
 
         <p>
-          入力内容<br />
           <textarea
             v-bind="content"
             type="text"
@@ -79,10 +77,12 @@
             name="content"
             cols="30"
             rows="5"
+            placeholder="質問内容を入力してください"
           ></textarea>
         </p>
         <p>
           <select name="example">
+            <option value="選択肢0" hidden>タグを選択してください</option>
             <option value="選択肢1">Python</option>
             <option value="選択肢2">C++</option>
             <option value="選択肢3">Vue</option>

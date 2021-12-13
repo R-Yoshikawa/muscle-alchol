@@ -13,7 +13,7 @@ const sampleEvent = [
                     19:45~20:00 クロージング`,
     type: "勉強会",
     executionStyle: "Zoom（URL:https://aaa.zoom/123456789012）",
-    tag: "スクラム開発",
+    tag: ["スクラム開発"],
   },
 ];
 
