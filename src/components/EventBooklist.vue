@@ -12,8 +12,10 @@
     </ul>
     <ul class="bookList">
       <li v-for="image in images" :key="image.index">
-        <div class="iconbook"><img :src="image.src" alt="" /></div>
-        <p>{{ image.name }}</p>
+        <router-link to="/">
+          <div class="iconbook"><img :src="image.src" alt="" /></div>
+          <p>{{ image.name }}</p>
+        </router-link>
       </li>
     </ul>
   </div>
@@ -40,6 +42,7 @@ export default {
 
 <style>
 .EventBooklistLayout {
+  width: 85%;
   padding: 1em 1em 1em 3em;
   border: solid 3px #3dbfb8;
 }

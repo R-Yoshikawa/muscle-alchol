@@ -20,7 +20,7 @@
         <p>{{ userDetail.user_BU }}</p>
         <div class="skill">
           <ul v-for="history of user_history" v-bind:key="history.history">
-            <p>{{ history }}</p>
+            <li>&emsp;&emsp;{{ history }}</li>
           </ul>
         </div>
       </div>
@@ -44,8 +44,10 @@
       </ul>
       <ul class="bookList">
         <li v-for="image in images" :key="image.index">
-          <div class="iconbook"><img :src="image.src" alt="" /></div>
-          <p>{{ image.name }}</p>
+          <router-link to="/">
+            <div class="iconbook"><img :src="image.src" alt="" /></div>
+            <p>{{ image.name }}</p>
+          </router-link>
         </li>
       </ul>
     </div>

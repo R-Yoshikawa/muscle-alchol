@@ -6,15 +6,24 @@
     <div class="scrollbar">
       <ul style="list-style: none">
         <li v-for="(event, indexEvent) in sampleEvent" :key="indexEvent">
-          <router-link to="/Mypage">
+          <router-link to="/Mypage" v-if="event.name === 'yata'">
             <div>{{ event.name }}</div>
           </router-link>
+          <div v-else>
+            <div>{{ event.name }}</div>
+          </div>
 
           <div class="subtitle">
             <nobr>
-              <router-link to="EventDetail">
+              <router-link
+                to="EventDetail"
+                v-if="event.title === 'スクラム開発アンチパターン勉強会'"
+              >
                 {{ event.title }}
               </router-link>
+              <nobr v-else>
+                {{ event.title }}
+              </nobr>
             </nobr>
 
             <nobr style="margin-left: 50px">
@@ -52,6 +61,17 @@
           size="40"
           placeholder="イベント名を入力してください"
         />
+        <p>
+          <input
+            v-bind="summary"
+            ref="summary"
+            type="text"
+            name="summary"
+            style="display: inline-block"
+            size="40"
+            placeholder="サマリーを入力してください"
+          />
+        </p>
         <p>
           <textarea
             v-bind="description"
@@ -123,6 +143,7 @@ export default {
   components: {},
   data() {
     return {
+      summary: "",
       sampleEvent,
       name: "yata",
       title: "",
@@ -151,7 +172,7 @@ export default {
         type: this.$refs.type.value === "" ? null : [this.$refs.type.value],
         executionStyle: this.$refs.executionStyle.value,
         tag: this.$refs.tag.value === "" ? null : [this.$refs.tag.value],
-
+        summary: this.$refs.summary.value,
         relatedBook: "これ",
       };
       sampleEvent.push(addObject);

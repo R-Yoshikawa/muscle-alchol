@@ -12,8 +12,14 @@
     </ul>
     <ul class="participantList">
       <li v-for="image in images" :key="image.index">
-        <div class="icon"><img :src="image.src" alt="" /></div>
-        <p>{{ image.name }}</p>
+        <router-link to="Mypage" v-if="image.name === 'yata'">
+          <div class="icon"><img :src="image.src" alt="" /></div>
+          <p>{{ image.name }}</p>
+        </router-link>
+        <div v-else>
+          <div class="icon"><img :src="image.src" alt="" /></div>
+          <p>{{ image.name }}</p>
+        </div>
         <div class="category1">
           <p>
             <b>{{ image.category }}</b>
@@ -55,6 +61,7 @@ export default {
 
 <style>
 .EventPartcipant1 {
+  width: 85%;
   padding: 1em 1em 1em 3em;
   border: solid 3px #3dbfb8;
 }
